@@ -1,0 +1,166 @@
+import React, { useState, useEffect } from "react";
+import { db } from "../firebase/firebaseConfig";
+import { collection, getDocs } from "firebase/firestore";
+
+function DisplayClassrooms() {
+  const [classrooms, setClassrooms] = useState([]);
+  const [filteredClassrooms, setFilteredClassrooms] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [buildingFilter, setBuildingFilter] = useState("");
+  const [minCapacity, setMinCapacity] = useState("");
+  const [startTime, setStartTime] = useState("");
+  const [duration, setDuration] = useState("");
+  const [days, setDays] = useState([]);
+  const [times, setTimes] = useState([]);
+
+  useEffect(() => {
+    const fetchClassrooms = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "classrooms"));
+        const classroomData = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setClassrooms(classroomData);
+        setFilteredClassrooms(classroomData); // Initialize filtered list
+        setLoading(false);
+
+        // Extract unique times and days from data (assuming data structure)
+        const uniqueDays = [...new Set(classroomData.flatMap((room) => room.days || []))];
+        const uniqueTimes = [...new Set(classroomData.flatMap((room) => room.times || []))];
+
+        setDays(uniqueDays);
+        setTimes(uniqueTimes);
+      } catch (error) {
+        console.error("Error fetching classrooms:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchClassrooms();
+  }, []);
+
+  // Function to handle filtering
+  useEffect(() => {
+    let filtered = classrooms.filter((room) => {
+      const matchesQuery = room.roomName.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesBuilding = buildingFilter ? room.building.toLowerCase() === buildingFilter.toLowerCase() : true;
+      const matchesCapacity = minCapacity ? room.capacity >= parseInt(minCapacity) : true;
+      const matchesTime =
+        startTime && duration
+          ? room.schedule.some((entry) => {
+              const roomStart = entry.start;
+              const roomEnd = entry.end;
+              const selectedEndTime = parseInt(startTime) + parseInt(duration);
+              return parseInt(startTime) >= roomStart && selectedEndTime <= roomEnd;
+            })
+          : true;
+
+      return matchesQuery && matchesBuilding && matchesCapacity && matchesTime;
+    });
+
+    setFilteredClassrooms(filtered);
+  }, [searchQuery, buildingFilter, minCapacity, startTime, duration, classrooms]);
+
+  if (loading) {
+    return <p>Loading classrooms...</p>;
+  }
+
+  return (
+    <div style={{ textAlign: "center", padding: "20px" }}>
+      <h2>Available Classrooms</h2>
+
+      <div style={{ marginBottom: "20px" }}>
+        <input
+          type="text"
+          placeholder="Search by Room Name"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          style={{ marginRight: "10px", padding: "8px" }}
+        />
+
+        <select
+          value={buildingFilter}
+          onChange={(e) => setBuildingFilter(e.target.value)}
+          style={{ marginRight: "10px", padding: "8px" }}
+        >
+          <option value="">All Buildings</option>
+          {[...new Set(classrooms.map((room) => room.building))].map((building, index) => (
+            <option key={index} value={building}>
+              {building}
+            </option>
+          ))}
+        </select>
+
+        <input
+          type="number"
+          placeholder="Min Capacity"
+          value={minCapacity}
+          onChange={(e) => setMinCapacity(e.target.value)}
+          style={{ marginRight: "10px", padding: "8px" }}
+        />
+
+        <select
+          value={startTime}
+          onChange={(e) => setStartTime(e.target.value)}
+          style={{ marginRight: "10px", padding: "8px" }}
+        >
+          <option value="">Select Start Time</option>
+          {Array.isArray(times) &&
+            times.map((time, index) => (
+              <option key={index} value={time}>
+                {time}
+              </option>
+            ))}
+        </select>
+
+        <input
+          type="number"
+          placeholder="Duration (hours)"
+          value={duration}
+          onChange={(e) => setDuration(e.target.value)}
+          style={{ marginRight: "10px", padding: "8px" }}
+        />
+
+        <select
+          value=""
+          onChange={(e) => setDays(e.target.value)}
+          style={{ marginRight: "10px", padding: "8px" }}
+        >
+          <option value="">Select Day</option>
+          {Array.isArray(days) &&
+            days.map((day, index) => (
+              <option key={index} value={day}>
+                {day}
+              </option>
+            ))}
+        </select>
+      </div>
+
+      <ul style={{ listStyle: "none", padding: 0 }}>
+        {filteredClassrooms.length > 0 ? (
+          filteredClassrooms.map((room) => (
+            <li
+              key={room.id}
+              style={{
+                marginBottom: "10px",
+                border: "1px solid #ccc",
+                padding: "10px",
+                borderRadius: "5px",
+              }}
+            >
+              <strong>Room:</strong> {room.roomName}, <strong>Building:</strong> {room.building},{" "}
+              <strong>Capacity:</strong> {room.capacity}
+            </li>
+          ))
+        ) : (
+          <p>No classrooms found matching criteria.</p>
+        )}
+      </ul>
+    </div>
+  );
+}
+
+export default DisplayClassrooms;
+
