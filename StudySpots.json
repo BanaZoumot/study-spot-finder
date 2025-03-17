@@ -1,0 +1,458 @@
+[
+  {
+    "name": "Dooly Memorial Second Floor Tables",
+    "description": "A designated study area in a historic building offering some outdoor tables. Ideal for group study sessions and casual work in a relaxed atmosphere.",
+    "location": {
+      "building": "Dooly Memorial",
+      "room": "",
+      "coordinates": {
+        "lat": 25.7220,
+        "lng": -80.2685
+      }
+    },
+    "indoor": false,
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/seniordesign-8e264.firebasestorage.app/o/2014066_U_img2-lg.jpg?alt=media&token=1665f9be-447f-4423-801a-5b2413551034"
+    ],
+    "operatingHours": {
+      "open": "08:00",
+      "close": "22:00"
+    },
+    "amenities": {
+      "powerOutlets": "Few",
+      "wifi": true,
+      "seatingCapacity": 30,
+      "whiteboard": false,
+      "naturalLight": true
+    },
+    "tags": [
+      "historic",
+      "group study",
+      "hybrid",
+      "convenient"
+    ],
+    "diningOptions": [
+      "Half Moon Empanadas"
+    ]
+  },
+  {
+    "name": "School of Law Courtyard",
+    "description": "A hidden oasis in the School of Law building, the courtyard offers a peaceful environment with ample seating, power outlets, and a charming fountain—ideal for quiet, individual study sessions.",
+    "location": {
+      "building": "School of Law",
+      "room": "Courtyard",
+      "coordinates": {
+        "lat": 25.7245,
+        "lng": -80.2680
+      }
+    },
+    "indoor": false,
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/seniordesign-8e264.firebasestorage.app/o/480x320_bricks-students.jpg?alt=media&token=b647c48b-74c4-48a3-8dc3-ee5bc2ca305b"
+    ],
+    "operatingHours": {},
+    "amenities": {
+      "powerOutlets": "Few",
+      "wifi": true,
+      "seatingCapacity": 40,
+      "whiteboard": false,
+      "naturalLight": true
+    },
+    "tags": [
+      "outdoor",
+      "hidden",
+      "fountain"
+    ],
+    "diningOptions": [
+      "Einstein's Bagels"
+    ]
+  },
+  {
+    "name": "Communication International Building Terrace",
+    "description": "A secluded terrace at the Communication International Building offering a quiet, outdoor study space away from campus hustle—a perfect retreat for solo study sessions.",
+    "location": {
+      "building": "Communication International Building",
+      "room": "Terrace",
+      "coordinates": {
+        "lat": 25.7270,
+        "lng": -80.2665
+      }
+    },
+    "indoor": false,
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/seniordesign-8e264.firebasestorage.app/o/SoC-Wolfson-Building.jpg?alt=media&token=5907b5ee-d1bd-42e9-99fb-f9369c669601"
+    ],
+    "operatingHours": {
+      "open": "08:00",
+      "close": "22:00"
+    },
+    "amenities": {
+      "powerOutlets": "Few",
+      "wifi": true,
+      "seatingCapacity": 20,
+      "whiteboard": false,
+      "naturalLight": true,
+      "quiet": "high"
+    },
+    "tags": [
+      "outdoor",
+      "secluded",
+      "quiet"
+    ],
+    "diningOptions": [
+      "Half Moon Empanadas"
+    ]
+  },
+  {
+    "name": "Business School Library",
+    "description": "Located in the Stubblefield Building at Herbert Business School, this study spot exudes a dark academia vibe with wooden tables and a quiet ambiance—ideal for focused work.",
+    "location": {
+      "building": "Stubblefield Building",
+      "room": "",
+      "coordinates": {
+        "lat": 25.7280,
+        "lng": -80.2675
+      }
+    },
+    "indoor": true,
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/seniordesign-8e264.firebasestorage.app/o/business-IRC-view1.jpg?alt=media&token=46cbfcbd-1635-4d08-a007-67d189e413fd"
+    ],
+    "operatingHours": {
+      "open": "08:00",
+      "close": "22:00"
+    },
+    "amenities": {
+      "powerOutlets": "moderate",
+      "wifi": true,
+      "seatingCapacity": 40,
+      "whiteboard": false,
+      "naturalLight": false,
+      "quiet": "high"
+    },
+    "tags": [
+      "quiet",
+      "themed",
+      "focused",
+      "dark academia"
+    ],
+    "diningOptions": [
+      "Half Moon Empanadas"
+    ]
+  },
+  {
+    "name": "Shalala Outdoor Tables",
+    "description": "Coveted outdoor tables located just outside the Shalala Student Center. These tables offer shade and scenic views of Cobb Fountain and Lake Osceola—perfect for a lively yet peaceful study break.",
+    "location": {
+      "building": "Shalala Student Center",
+      "room": "Outdoor Area near Cobb Fountain",
+      "coordinates": {
+        "lat": 25.7250,
+        "lng": -80.2660
+      }
+    },
+    "indoor": false,
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/seniordesign-8e264.firebasestorage.app/o/shalala-student-center.jpg?alt=media&token=7d3f7a56-7ccb-466e-b80e-a71ddfc11949"
+    ],
+    "operatingHours": {},
+    "amenities": {
+      "powerOutlets": "none",
+      "wifi": true,
+      "seatingCapacity": 30,
+      "whiteboard": false,
+      "naturalLight": true,
+      "quiet": "moderate"
+    },
+    "tags": [
+      "outdoor",
+      "lively",
+      "scenic",
+      "popular"
+    ],
+    "diningOptions": [
+      "Starbucks",
+      "Corner Deli",
+      "RathsKeller"
+    ]
+  },
+  {
+    "name": "Lakeside Village Outdoor Gliders",
+    "description": "The Lakeside Village Outdoor Gliders provide a breezy, scenic study environment adjacent to Lake Osceola. With comfortable seating, these gliders offer a relaxed outdoor setting ideal for both solo study and group collaboration. Featuring moderate power outlets for charging devices and no fixed opening hours, they allow for flexible use throughout the day.",
+    "location": {
+      "building": "Lakeside Village",
+      "room": "",
+      "coordinates": {
+        "lat": 25.7245,
+        "lng": -80.2650
+      }
+    },
+    "indoor": false,
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/seniordesign-8e264.firebasestorage.app/o/Study-spot-1.jpg?alt=media&token=188a9902-ee02-44be-a44c-d5764f292cc6"
+    ],
+    "operatingHours": {},
+    "amenities": {
+      "powerOutlets": "moderate",
+      "wifi": true,
+      "seatingCapacity": 50,
+      "whiteboard": false,
+      "naturalLight": true,
+      "quiet": "moderate"
+    },
+    "tags": [
+      "outdoor",
+      "lakeside",
+      "gliders",
+      "scenic",
+      "flexible"
+    ],
+    "diningOptions": [
+      "Smoothie King"
+    ]
+  },
+  {
+    "name": "Shalala Outdoor Terrace",
+    "description": "A relaxing outdoor terrace at Shalala Student Center that offers a blend of open-air freshness and comfortable seating. Ideal for unwinding between classes or engaging in light study sessions while enjoying the campus ambiance, with ample natural light, moderate power outlets, and flexible use throughout the day.",
+    "location": {
+      "building": "Shalala Student Center",
+      "room": "Outdoor Terrace",
+      "coordinates": {
+        "lat": 25.7240,
+        "lng": -80.2655
+      }
+    },
+    "indoor": false,
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/seniordesign-8e264.firebasestorage.app/o/48414527042_2cdda8685f_b.jpg?alt=media&token=d1db007b-025b-4ae0-a4dd-10550784f5b0"
+    ],
+    "operatingHours": {},
+    "amenities": {
+      "powerOutlets": "moderate",
+      "wifi": true,
+      "seatingCapacity": 40,
+      "whiteboard": false,
+      "naturalLight": true,
+      "quiet": "moderate"
+    },
+    "tags": [
+      "outdoor",
+      "terrace",
+      "relaxed",
+      "scenic"
+    ],
+    "diningOptions": [
+      "Starbucks",
+      "Corner Deli"
+    ]
+  },
+  {
+    "name": "ITD LAB",
+    "description": "The ITD LAB, located within the Engineering Building, offers a high-tech collaborative workspace for engineering students. It features state-of-the-art computing facilities, ample power outlets, and high-speed Wi-Fi, making it ideal for project-based work, research, and focused study sessions.",
+    "location": {
+      "building": "MccArthur Engineering",
+      "room": "ITD LAB",
+      "coordinates": {
+        "lat": 25.7280,
+        "lng": -80.2700
+      }
+    },
+    "indoor": true,
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/seniordesign-8e264.firebasestorage.app/o/itd-class_1240x550.jpg?alt=media&token=4e9d58db-fbae-41d1-a84e-ba21c4e08e77"
+    ],
+    "operatingHours": {
+      "open": "08:00",
+      "close": "20:00"
+    },
+    "amenities": {
+      "powerOutlets": "many",
+      "wifi": true,
+      "seatingCapacity": 35,
+      "whiteboard": true,
+      "naturalLight": false,
+      "quiet": "moderate"
+    },
+    "tags": [
+      "engineering",
+      "lab",
+      "technology",
+      "collaborative",
+      "study"
+    ],
+    "diningOptions": []
+  },
+  {
+    "name": "Lake Osceola Outdoor Steps",
+    "description": "The Lake Osceola Outdoor Steps offer a unique open-air space along the scenic shores of Lake Osceola. This informal spot provides a refreshing setting for quick study sessions, relaxed group discussions, or simply taking a break to enjoy the lake view. With natural light and a calm ambiance, it's a perfect retreat from the traditional study environment.",
+    "location": {
+      "building": "Lake Osceola",
+      "room": "Outdoor Steps",
+      "coordinates": {
+        "lat": 25.7245,
+        "lng": -80.2655
+      }
+    },
+    "indoor": false,
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/seniordesign-8e264.firebasestorage.app/o/lakefront.jpg?alt=media&token=648ccd73-bdf9-4287-bf24-f06a541f804b"
+    ],
+    "operatingHours": {},
+    "amenities": {
+      "powerOutlets": "none",
+      "wifi": true,
+      "seatingCapacity": 20,
+      "whiteboard": false,
+      "naturalLight": true,
+      "quiet": "moderate"
+    },
+    "tags": [
+      "outdoor",
+      "scenic",
+      "lake view",
+      "relaxing",
+      "informal"
+    ],
+    "diningOptions": []
+  },
+  {
+    "name": "Whitten UC First Floor",
+    "description": "A collaborative space located on the first floor of Whitten University Commons. Designed for group study and interactive sessions, this area provides flexible seating, modern technology, and a lively atmosphere conducive to brainstorming and teamwork.",
+    "location": {
+      "building": "Whitten University Commons",
+      "room": "First Floor",
+      "coordinates": {
+        "lat": 25.7275,
+        "lng": -80.2670
+      }
+    },
+    "indoor": true,
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/seniordesign-8e264.firebasestorage.app/o/480x320_uc_empty-2.jpg?alt=media&token=3481f0cf-0c7d-4624-9717-26ef5a53ee14"
+    ],
+    "operatingHours": {
+      "open": "08:00",
+      "close": "22:00"
+    },
+    "amenities": {
+      "powerOutlets": "moderate",
+      "wifi": true,
+      "seatingCapacity": 40,
+      "whiteboard": true,
+      "naturalLight": true,
+      "quiet": "moderate"
+    },
+    "tags": [
+      "collaborative",
+      "group study",
+      "first floor",
+      "dynamic"
+    ],
+    "diningOptions": []
+  },
+  {
+    "name": "Whitten UC Second Floor",
+    "description": "A quiet, focused study space on the second floor of Whitten University Commons. This area is tailored for individual study, offering a serene environment with ample natural light, comfortable seating, and a calm ambiance ideal for concentrated academic work.",
+    "location": {
+      "building": "Whitten University Commons",
+      "room": "Second Floor",
+      "coordinates": {
+        "lat": 25.7280,
+        "lng": -80.2675
+      }
+    },
+    "indoor": true,
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/seniordesign-8e264.firebasestorage.app/o/36_22103_00_N6_weblg-aspect-ratio-1440-850-1536x907.jpg?alt=media&token=f7c92240-8478-4873-8c59-f88a866801e8"
+    ],
+    "operatingHours": {
+      "open": "08:00",
+      "close": "22:00"
+    },
+    "amenities": {
+      "powerOutlets": "moderate",
+      "wifi": true,
+      "seatingCapacity": 35,
+      "whiteboard": false,
+      "naturalLight": true,
+      "quiet": "high"
+    },
+    "tags": [
+      "quiet",
+      "individual study",
+      "second floor",
+      "focused"
+    ],
+    "diningOptions": []
+  },
+  {
+    "name": "Communication School Courtyard",
+    "description": "An inviting outdoor courtyard nestled within the Communication School building, offering a refreshing environment with ample seating and a balanced mix of natural light and shelter. Ideal for individual study or small group discussions, this space provides a relaxed ambiance perfect for a change of scenery.",
+    "location": {
+      "building": "Communication School",
+      "room": "Courtyard",
+      "coordinates": {
+        "lat": 25.7270,
+        "lng": -80.2660
+      }
+    },
+    "indoor": false,
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/seniordesign-8e264.firebasestorage.app/o/courtyard-16x9.jpg?alt=media&token=7acba64d-0858-47ce-9475-4a11325e9368"
+    ],
+    "operatingHours": {
+      "open": "08:00",
+      "close": "22:00"
+    },
+    "amenities": {
+      "powerOutlets": "Few",
+      "wifi": true,
+      "seatingCapacity": 30,
+      "whiteboard": false,
+      "naturalLight": true,
+      "quiet": "moderate"
+    },
+    "tags": [
+      "outdoor",
+      "courtyard",
+      "relaxed",
+      "scenic"
+    ],
+    "diningOptions": []
+  },
+  {
+    "name": "Music Library Study Area",
+    "description": "A serene and creative study area within the Music Library. Designed for focused academic work and creative exploration, it offers access to specialized music resources, comfortable seating, and a calm atmosphere ideal for both individual and group projects.",
+    "location": {
+      "building": "Music Library",
+      "room": "Main Floor Study Area",
+      "coordinates": {
+        "lat": 25.7230,
+        "lng": -80.2680
+      }
+    },
+    "indoor": true,
+    "images": [
+      "https://firebasestorage.googleapis.com/v0/b/seniordesign-8e264.firebasestorage.app/o/images.jpeg?alt=media&token=e2f6a187-62a4-47c0-a15c-546fe85a5aa0"
+    ],
+    "operatingHours": {
+      "open": "08:00",
+      "close": "22:00"
+    },
+    "amenities": {
+      "powerOutlets": "adequate",
+      "wifi": true,
+      "seatingCapacity": 25,
+      "whiteboard": false,
+      "naturalLight": true,
+      "quiet": "high"
+    },
+    "tags": [
+      "quiet",
+      "creative",
+      "library",
+      "music"
+    ],
+    "diningOptions": []
+  }
+]

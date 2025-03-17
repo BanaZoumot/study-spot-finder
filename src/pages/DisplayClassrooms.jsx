@@ -18,7 +18,7 @@ export default function DisplayClassrooms() {
           ...doc.data(),
         }));
         setClassrooms(classroomData);
-        setFilteredClassrooms(classroomData); // Default to all classrooms
+        setFilteredClassrooms(classroomData);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching classrooms:", error);
@@ -29,37 +29,44 @@ export default function DisplayClassrooms() {
     fetchClassrooms();
   }, []);
 
+  const applyFilters = (filters) => {
+    let filtered = classrooms.filter((room) => {
+      const { building, capacity, startTime, duration, selectedDay } = filters;
 
-const applyFilters = (filters) => {
-  let filtered = classrooms.filter((room) => {
-    const { building, capacity, startTime, duration, selectedDay } = filters;
+      const matchesBuilding = building ? room.building.toLowerCase() === building.toLowerCase() : true;
+      const matchesCapacity = capacity ? room.capacity >= parseInt(capacity) : true;
 
-    const matchesBuilding = building ? room.building.toLowerCase() === building.toLowerCase() : true;
-    const matchesCapacity = capacity ? room.capacity >= parseInt(capacity) : true;
+      const matchesTime = startTime && duration && selectedDay
+        ? !room.schedule.some((entry) => {
+            if (!entry.days.includes(selectedDay)) return false;
 
-    const matchesTime = startTime && duration && selectedDay
-      ? !room.schedule.some((entry) => {
-          if (!entry.days.includes(selectedDay)) return false; // Skip if it's not the selected day
+            const roomStart = parseInt(entry.startTime.replace(":", ""));
+            const roomEnd = parseInt(entry.endTime.replace(":", ""));
+            const selectedStart = parseInt(startTime.replace(":", ""));
+            const selectedEnd = selectedStart + parseInt(duration) * 100;
 
-          const roomStart = parseInt(entry.startTime.replace(":", ""));
-          const roomEnd = parseInt(entry.endTime.replace(":", ""));
-          const selectedStart = parseInt(startTime.replace(":", ""));
-          const selectedEnd = selectedStart + parseInt(duration) * 100; // Convert hours to 4-digit format
+            return selectedStart < roomEnd && selectedEnd > roomStart;
+          })
+        : true;
 
-          return selectedStart < roomEnd && selectedEnd > roomStart; // Check for time overlap
-        })
-      : true; // If no time is selected, include all classrooms
+      return matchesBuilding && matchesCapacity && matchesTime;
+    });
 
-    return matchesBuilding && matchesCapacity && matchesTime;
-  });
+    setFilteredClassrooms(filtered);
+  };
 
-  setFilteredClassrooms(filtered);
-};
-
-if (loading) return <p>Loading classrooms...</p>;
+  if (loading) return <p>Loading classrooms...</p>;
 
   return (
     <div className="container">
+      {/* 🚀 Video Banner */}
+      <div className="video-banner">
+        <video autoPlay loop muted playsInline className="banner-video">
+          <source src="/videos/campus-banner.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
       <h1>📚 Find Your Perfect Study Spot!</h1>
       <FilterForm onFilter={applyFilters} classrooms={classrooms} />
       <div className="classroom-list">
@@ -72,3 +79,7 @@ if (loading) return <p>Loading classrooms...</p>;
     </div>
   );
 }
+
+<div className="bg-blue-500 text-white p-4 rounded">
+  This should have a blue background.
+</div>

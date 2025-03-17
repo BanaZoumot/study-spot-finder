@@ -1,22 +1,29 @@
+// src/components/FilterForm.jsx
+
 import React, { useState, useEffect } from "react";
 
-export default function FilterForm({ onFilter, classrooms }) {
+// Helper to get the current day name (e.g., "Monday")
+function getCurrentDay() {
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  return days[new Date().getDay()];
+}
+
+export default function FilterForm({ onFilter, classrooms = [] }) {
   const [filters, setFilters] = useState({
     building: "",
     capacity: "",
     startTime: "",
     duration: "",
-    selectedDay: "",
+    selectedDay: getCurrentDay() // Default to the current day
   });
 
-  // Generate current time in HH:MM format
   const getCurrentTime = () => {
     const now = new Date();
-    return now.toTimeString().slice(0, 5); // Extract HH:MM
+    return now.toTimeString().slice(0, 5); // HH:MM
   };
 
-  // Populate buildings dropdown dynamically
-  const uniqueBuildings = [...new Set(classrooms.map(room => room.building))];
+  // Generate unique building list
+  const uniqueBuildings = [...new Set(classrooms.map((room) => room.building))];
 
   const handleChange = (key, value) => {
     setFilters({ ...filters, [key]: value });
@@ -28,57 +35,90 @@ export default function FilterForm({ onFilter, classrooms }) {
   };
 
   return (
-    <form className="filter-form" onSubmit={handleSubmit}>
-      <h2>🧐 Let's find the perfect study spot!</h2>
-
+    <form
+      onSubmit={handleSubmit}
+      style={{ padding: "10px", display: "flex", flexDirection: "column", flex: "1 1 auto", width: "100%" }}
+      className="w-full h-full flex flex-col items-stretch justify-evenly gap-4"
+    >
       {/* Building Dropdown */}
-      <div className="filter-group">
-        <p>📍 Which building do you prefer?</p>
-        <select onChange={(e) => handleChange("building", e.target.value)}>
+      <div className="flex flex-col w-full">
+        <label className="text-sm text-white uppercase mb-1 text-left">
+          Which building do you prefer?
+        </label>
+        <select
+          onChange={(e) => handleChange("building", e.target.value)}
+          value={filters.building}
+          className="h-8 justify-evenly rounded-full bg-white text-black text-base px-2 border-none focus:outline-none"
+          style={{ width: "30vw" }}
+        >
           <option value="">All Buildings</option>
           {uniqueBuildings.map((building, index) => (
-            <option key={index} value={building}>{building}</option>
+            <option key={index} value={building}>
+              {building}
+            </option>
           ))}
         </select>
       </div>
 
       {/* Capacity Input */}
-      <div className="filter-group">
-        <p>🎓 How many people?</p>
-        <input type="number" placeholder="Minimum capacity" onChange={(e) => 
-handleChange("capacity", e.target.value)} />
+      <div className="flex flex-col w-full">
+        <label className="text-sm text-white uppercase mb-1 text-left">
+          How many people?
+        </label>
+        <input
+          type="number"
+          placeholder=""
+          onChange={(e) => handleChange("capacity", e.target.value)}
+          value={filters.capacity}
+          className="h-8 box-border rounded-full bg-white text-black text-base px-2 border-none focus:outline-none"
+          style={{ width: "30vw" }}
+        />
       </div>
 
-      {/* Start Time Selector with "Now" Button */}
-      <div className="filter-group">
-        <p>⏳ What time do you want to study?</p>
-        <input type="time" value={filters.startTime} onChange={(e) => handleChange("startTime", 
-e.target.value)} />
-        <button type="button" onClick={() => handleChange("startTime", getCurrentTime())}>
-          ⏰ Now
+      {/* Start Time Input */}
+      <div className="flex flex-col w-full">
+        <label className="text-sm text-white uppercase mb-1 text-left">
+          What time do you want to study?
+        </label>
+        <input
+          type="time"
+          placeholder=""
+          value={filters.startTime}
+          onChange={(e) => handleChange("startTime", e.target.value)}
+          className="h-8 box-border rounded-full bg-white text-black text-base px-4 border-none focus:outline-none"
+          style={{ width: "30vw" }}
+        />
+        <button
+          type="button"
+          onClick={() => handleChange("startTime", getCurrentTime())}
+          className="mt-2 bg-orange-500 text-white text-sm rounded-full px-4 py-2 font-semibold uppercase w-auto self-start hover:bg-orange-600 transition-colors"
+        >
+          Now
         </button>
       </div>
 
       {/* Duration Input */}
-      <div className="filter-group">
-        <p>⌛ How long will you study?</p>
-        <input type="number" placeholder="Duration in hours" onChange={(e) => 
-handleChange("duration", e.target.value)} />
+      <div className="flex flex-col w-full">
+        <label className="text-sm text-white uppercase mb-1 text-left">
+          How many hours will you study?
+        </label>
+        <input
+          type="number"
+          placeholder=""
+          onChange={(e) => handleChange("duration", e.target.value)}
+          value={filters.duration}
+          className="h-8 box-border rounded-full bg-white text-black text-base px-2 border-none focus:outline-none"
+          style={{ width: "30vw" }}
+        />
       </div>
 
-      {/* Day Selector */}
-      <div className="filter-group">
-        <p>📅 Which day?</p>
-        <select onChange={(e) => handleChange("selectedDay", e.target.value)}>
-          <option value="">Select a day</option>
-          {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map((day) => (
-            <option key={day} value={day}>{day}</option>
-          ))}
-        </select>
-      </div>
-
-      <button type="submit" className="submit-btn">🔍 Find My Spot</button>
+      {/* Submit Button */}
+      <button
+        type="submit"
+        className="bg-orange-500 text-white text-base rounded-full px-2 py-3 font-bold uppercase mt-4 hover:bg-orange-600 transition-colors self-start"
+      >
+        LET’S GO!
+      </button>
     </form>
   );
 }
-

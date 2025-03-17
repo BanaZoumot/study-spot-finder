@@ -1,0 +1,1658 @@
+BEGIN:VCALENDAR
+PRODID:-//github.com/rianjs/ical.net//NONSGML ical.net 4.0//EN
+VERSION:2.0
+BEGIN:VEVENT
+CATEGORIES:Cultural
+CATEGORIES:Academic/Honorary/Professional
+CATEGORIES:Communities
+CATEGORIES:Graduate Students
+DESCRIPTION:Nowruz\n\nHosted by: Iranian Association at University of Miam
+ i\n\nAdditional Information can be found at: https://miami.campuslabs.com
+ /engage/event/11122753
+DTEND:20250317T020000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250316T230000Z
+GEO:25.719300;-80.279050
+LOCATION:Shalala Student Center
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Nowruz 1404
+UID:https://miami.campuslabs.com/engage/event/11122753
+URL:https://miami.campuslabs.com/engage/event/11122753
+X-HOSTS:Iranian Association at University of Miami
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Social
+CATEGORIES:Health & Wellness
+DESCRIPTION:Join us for our Inclusivity Talk featuring Maghan Morin\, foun
+ der of Melanated Beauty Spa\, to discuss the founding of Maghan's busines
+ s and the importance of representation in the skincare and beauty industr
+ ies!\n\nHosted by: Skin to Skin\n\nAdditional Information can be found at
+ : https://miami.campuslabs.com/engage/event/11170146
+DTEND:20250318T003000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250317T233000Z
+GEO:25.719300;-80.279050
+LOCATION:Shalala Grand Ballroom West
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Inclusivity Talk
+UID:https://miami.campuslabs.com/engage/event/11170146
+URL:https://miami.campuslabs.com/engage/event/11170146
+X-HOSTS:Skin to Skin
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:GroupBusiness
+CATEGORIES:Academic/Honorary/Professional
+DESCRIPTION:J.B. (Jo) Mirza is the 49th president of the Amateur Athletic 
+ Union (AAU)\, having served the organization for more than five decades a
+ t the local\, national and international levels. He got his start in kara
+ te\, competing in the Central AAU Association (now District). His roles w
+ ith the AAU have included AAU Karate National Chair\, District AAU Govern
+ or (Central and Florida Gold Coast)\, District Lieutenant Governor (Centr
+ al) as well as instructor\, official and volunteer. In 1987\, he was elec
+ ted AAU Karate National Chair. He was elected to the office of AAU Nation
+ al Treasurer in 2014 and re-elected in 2018. Mirza has been a member of t
+ he AAU Board of Directors since 1994.\n\nHosted by: USPORT (Undergraduate
+  Sport Professionals' Organization for Research & Training)\n\nAdditional
+  Information can be found at: https://miami.campuslabs.com/engage/event/1
+ 0939848
+DTEND:20250318T010000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250318T000000Z
+GEO:25.722170;-80.275990
+LOCATION:Whitten LC 110
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Speaker Series with Jo Mirza
+UID:https://miami.campuslabs.com/engage/event/10939848
+URL:https://miami.campuslabs.com/engage/event/10939848
+X-HOSTS:USPORT (Undergraduate Sport Professionals' Organization for Resear
+ ch & Training)
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+CATEGORIES:Academic/Honorary/Professional
+DESCRIPTION:\n\n\n\nJoin us for our monthly general body meeting to hear u
+ pdates on upcoming events\, initiatives\, and opportunities to get involv
+ ed. Connect with fellow members\, share ideas\, and stay informed about o
+ ur organization's latest developments. We look forward to seeing you ther
+ e. \n\n\n\n\n\nHosted by: American Medical Student Association\n\nAdditio
+ nal Information can be found at: https://miami.campuslabs.com/engage/even
+ t/10976072
+DTEND:20250318T010000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250318T000000Z
+LOCATION:Shalala Grand Ballroom East
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:March 2025 General Body Meeting
+UID:https://miami.campuslabs.com/engage/event/10976072
+URL:https://miami.campuslabs.com/engage/event/10976072
+X-HOSTS:American Medical Student Association
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Social
+CATEGORIES:Communities
+CATEGORIES:Multicultural and Identity-Based
+DESCRIPTION:Join the LGBTQ Student Center for our monthly event\, Mid-Day 
+ Mingle!\nWe will be having supplies to create friendship bracelets\, snac
+ ks to enjoy\, and a community space to gather.\nHope to see you there!\n\
+ nHosted by: LGBTQ Student Center\n\nAdditional Information can be found a
+ t: https://miami.campuslabs.com/engage/event/11127254
+DTEND:20250318T203000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250318T183000Z
+LOCATION:LGBTQ Student Center (Whitten UC 2300H)
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Mid-Day Mingle: Friendship Bracelets
+UID:https://miami.campuslabs.com/engage/event/11127254
+URL:https://miami.campuslabs.com/engage/event/11127254
+X-HOSTS:LGBTQ Student Center
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:GroupBusiness
+CATEGORIES:Programming Boards
+DESCRIPTION:The Executive Board will be meeting to discuss co-sponsorships
+ \, behind-the-scenes themes\, and more!\n\nHosted by: Hurricane Productio
+ ns\n\nAdditional Information can be found at: https://miami.campuslabs.co
+ m/engage/event/10905614
+DTEND:20250318T220000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250318T210000Z
+LOCATION:Shalala Student Center - HP Suite
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:HP Executive Board Meeting
+UID:https://miami.campuslabs.com/engage/event/10905614
+URL:https://miami.campuslabs.com/engage/event/10905614
+X-HOSTS:Hurricane Productions
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+DESCRIPTION:Come garden with us!\n\nHosted by: CommUnity Garden\n\nAdditio
+ nal Information can be found at: https://miami.campuslabs.com/engage/even
+ t/11057563
+DTEND:20250318T220000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250318T210000Z
+LOCATION:John C. Gifford Arboretum
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tuesday Garden Hour
+UID:https://miami.campuslabs.com/engage/event/11057563
+URL:https://miami.campuslabs.com/engage/event/11057563
+X-HOSTS:CommUnity Garden
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Social
+DESCRIPTION:Come join us and meet Candidate for Coral Gables Commissioner\
+ , Tom Wells. \n\nHosted by: UDems\n\nAdditional Information can be found 
+ at: https://miami.campuslabs.com/engage/event/11170513
+DTEND:20250318T220000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250318T210000Z
+LOCATION:Shalala Senate Room
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:UDems: Speaker Series/Meet and Greet
+UID:https://miami.campuslabs.com/engage/event/11170513
+URL:https://miami.campuslabs.com/engage/event/11170513
+X-HOSTS:UDems
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+CATEGORIES:Community Outreach and Social Change
+DESCRIPTION:In collaboration with F Fentanyl and the Sandler Center\, we w
+ ill be hosting monthly Narcan trainings. Free Narcan\, test strips\, and 
+ resources will also be passed out!\nPlease RSVP: https://umiami.qualtrics
+ .com/jfe/form/SV_eUTtAY1jHTzuhTw\n\nHosted by: URecovery: A Collegiate Re
+ covery Community\n\nAdditional Information can be found at: https://miami
+ .campuslabs.com/engage/event/11018071
+DTEND:20250318T233000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250318T223000Z
+LOCATION:Shalala Iron Arrow Room
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Narcan Trainings
+UID:https://miami.campuslabs.com/engage/event/11018071
+URL:https://miami.campuslabs.com/engage/event/11018071
+X-HOSTS:URecovery: A Collegiate Recovery Community
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Spirituality
+DESCRIPTION:Join us at the Rathskeller every Tuesday night from 6:30 - 8:0
+ 0 for some pub style trivia! Follow us on Instagram to see any upcoming t
+ hemed trivia nights we have coming up.\n\nHosted by: Rathskeller\n\nAddit
+ ional Information can be found at: https://miami.campuslabs.com/engage/ev
+ ent/10805317
+DTEND:20250319T000000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250318T223000Z
+LOCATION:Rathskeller
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Trivia Tuesday
+UID:https://miami.campuslabs.com/engage/event/10805317
+URL:https://miami.campuslabs.com/engage/event/10805317
+X-HOSTS:Rathskeller
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Social
+DESCRIPTION:AMSA members will destress over board games!\n\nHosted by: Ame
+ rican Medical Student Association\n\nAdditional Information can be found 
+ at: https://miami.campuslabs.com/engage/event/11100356
+DTEND:20250319T010000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250319T000000Z
+GEO:25.722190;-80.275990
+LOCATION:Whitten LC 180
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:fAMSA Game Night
+UID:https://miami.campuslabs.com/engage/event/11100356
+URL:https://miami.campuslabs.com/engage/event/11100356
+X-HOSTS:American Medical Student Association
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+DESCRIPTION:Come garden with us! \n\nHosted by: CommUnity Garden\n\nAdditi
+ onal Information can be found at: https://miami.campuslabs.com/engage/eve
+ nt/11057652
+DTEND:20250319T210000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250319T200000Z
+LOCATION:John C. Gifford Arboretum
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Wednesday Garden Hour
+UID:https://miami.campuslabs.com/engage/event/11057652
+URL:https://miami.campuslabs.com/engage/event/11057652
+X-HOSTS:CommUnity Garden
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Cultural
+CATEGORIES:Multicultural and Identity-Based
+DESCRIPTION:If you are interested in exploring ADPIA topics such as identi
+ ty\, history\, and issues\, join us for AASA's Tea Talks sessions! Tea Ta
+ lks is a program designed to foster discussions about Asian-American cult
+ ure and issues. This second session will be about taking back our history
+  and reshaping narratives.\nYou DO NOT need to be Asian to attend\, so if
+  this is something you are interested in\, we would love to have you join
+  us!\nThere will also be free snacks and drinks for attendees :)\n\nHoste
+ d by: Asian American Students Association\n\nAdditional Information can b
+ e found at: https://miami.campuslabs.com/engage/event/11148571
+DTEND:20250319T233000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250319T223000Z
+GEO:25.718740;-80.275810
+LOCATION:Lakeside Classroom 1090
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tea Talks
+UID:https://miami.campuslabs.com/engage/event/11148571
+URL:https://miami.campuslabs.com/engage/event/11148571
+X-HOSTS:Asian American Students Association
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Arts
+DESCRIPTION:The mic's are hot and the lights are on\, come to the Rat ever
+ y Wednesday for some karaoke from 6:30 - 8:00 p.m. Follow us on Instagram
+  to see any upcoming karaoke themes!\n\nHosted by: Rathskeller\n\nAdditio
+ nal Information can be found at: https://miami.campuslabs.com/engage/even
+ t/10805405
+DTEND:20250320T000000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250319T223000Z
+LOCATION:Rathskeller
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Karaoke Wednesday
+UID:https://miami.campuslabs.com/engage/event/10805405
+URL:https://miami.campuslabs.com/engage/event/10805405
+X-HOSTS:Rathskeller
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:ThoughtfulLearning
+CATEGORIES:Academic/Honorary/Professional
+DESCRIPTION:To all new and existing researchers! Join UConnect for pizza\,
+  Kahoot\, and more at Welcome To Research (Spring edition). Come learn ho
+ w to get involved and what our E-board can do for you!\n \n\nHosted by: U
+ Connect\n\nAdditional Information can be found at: https://miami.campusla
+ bs.com/engage/event/11132610
+DTEND:20250320T003000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250319T233000Z
+GEO:25.722190;-80.275990
+LOCATION:Whitten LC
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Welcome To Research!
+UID:https://miami.campuslabs.com/engage/event/11132610
+URL:https://miami.campuslabs.com/engage/event/11132610
+X-HOSTS:UConnect
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:ThoughtfulLearning
+CATEGORIES:Academic/Honorary/Professional
+CATEGORIES:Communities
+CATEGORIES:Community Outreach and Social Change
+CATEGORIES:Health & Wellness
+DESCRIPTION:Join us as we host the University of Medicine and Health Scien
+ ce on Wednesday\, March 19 from 8-9 PM in Whitten LC 194!\n\nHosted by: A
+ merican Medical Student Association\n\nAdditional Information can be foun
+ d at: https://miami.campuslabs.com/engage/event/11142241
+DTEND:20250320T010000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250320T000000Z
+LOCATION:Whitten LC 194
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:AMSA x University of Medicine and Health Science
+UID:https://miami.campuslabs.com/engage/event/11142241
+URL:https://miami.campuslabs.com/engage/event/11142241
+X-HOSTS:American Medical Student Association
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:ThoughtfulLearning
+CATEGORIES:Academic/Honorary/Professional
+DESCRIPTION:Pre-Veterinary society general body meeting.\n\nHosted by: Pre
+ -Veterinary Society\n\nAdditional Information can be found at: https://mi
+ ami.campuslabs.com/engage/event/10964806
+DTEND:20250320T013000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250320T000000Z
+LOCATION:Cox Science 166
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:General Body Meeting
+UID:https://miami.campuslabs.com/engage/event/10964806
+URL:https://miami.campuslabs.com/engage/event/10964806
+X-HOSTS:Pre-Veterinary Society
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Arts
+CATEGORIES:Communities
+CATEGORIES:Multicultural and Identity-Based
+DESCRIPTION:A night of Black excellence\, awards\, dancing\, and fun. \n\n
+ Hosted by: United Black Students\n\nAdditional Information can be found a
+ t: https://miami.campuslabs.com/engage/event/11115416
+DTEND:20250320T020000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250319T230000Z
+GEO:25.719300;-80.279050
+LOCATION:Shalala Student Center
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:UBS Gala 2025
+UID:https://miami.campuslabs.com/engage/event/11115416
+URL:https://miami.campuslabs.com/engage/event/11115416
+X-HOSTS:United Black Students
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Arts
+DESCRIPTION:Every Thursday on the Rathskeller patio we feature some studen
+ t DJs. Grab a drink and a snack and listen to their set from 5:00 - 7:00 
+ p.m.\n\nHosted by: Rathskeller\n\nAdditional Information can be found at:
+  https://miami.campuslabs.com/engage/event/10805336
+DTEND:20250320T230000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250320T210000Z
+LOCATION:Rathskeller
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:DJ Thursday
+UID:https://miami.campuslabs.com/engage/event/10805336
+URL:https://miami.campuslabs.com/engage/event/10805336
+X-HOSTS:Rathskeller
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:ThoughtfulLearning
+CATEGORIES:Communities
+CATEGORIES:Community Outreach and Social Change
+CATEGORIES:Health & Wellness
+CATEGORIES:Multicultural and Identity-Based
+DESCRIPTION:Join us from 8-9pm for a collab with PERIOD. to talk about rep
+ roductive rights! (Location TBA)\n\nHosted by: IGNITE UMiami\, PERIOD@UMi
+ ami\n\nAdditional Information can be found at: https://miami.campuslabs.c
+ om/engage/event/11075366
+DTEND:20250321T010000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250321T000000Z
+LOCATION:TBA
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:IGNITE x PERIOD
+UID:https://miami.campuslabs.com/engage/event/11075366
+URL:https://miami.campuslabs.com/engage/event/11075366
+X-HOSTS:PERIOD@UMiami
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Arts
+CATEGORIES:Media & Publications
+CATEGORIES:Performing Arts
+DESCRIPTION:You're invited to Dr. Patrick Stuckemeyer's masterclass on mus
+ ic business and more on March 21st\, 2025 in RC102 at 1:25 pm!\nDr. Pat S
+ tuckemeyer is Director of Bands and Assistant Professor of Music at Kentu
+ cky Wesleyan College where he directs the KWC Wind Ensemble\, the Panther
+  Pep Band\, teaches Music Theory and Applied Trombone\, Euphonium\, and T
+ uba.  Prior to joining the faculty at KWC\, Stuckemeyer served on the fac
+ ulties of Indiana University-Southeast\, Arizona State University\, Mesa 
+ Community College\, Chandler-Gilbert Community College\, and taught prima
+ ry education in the Evansville\, Indiana-area.\nAs a soloist\, Stuckemeye
+ r’s diverse career has taken him to a dozen countries and three continent
+ s.  He has released three solo recordings: Just For Fun\, Stepping Stones
+  for Euphonium\, Vol. 1\, and Footprints (with the Arizona State Universi
+ ty Wind Ensemble).  He is Besson and Buffet Crampon Soloist and Clinician
+  since 2006\, and plays exclusively on the Besson 2052-S euphonium and Be
+ sson 983 Eb tuba.  An active chamber musician\, Stuckemeyer is a founding
+  member of the Eufonix Quartet and has released four recordings with them
+ : End Game\, Brink\, Nuclear Breakfast\, and Stepping Stones for Tuba Qua
+ rtet.  As a brass band solo euphoniumist\, Pat honed his skills in the Un
+ ited Kingdom performing with the Grimethorpe Colliery Band\, Besses o’ ‘T
+ h Barn Band\, and the Leyland Band.  His extensive brass banding experien
+ ce has served him well as a member of the Fountain City Brass Band\, Cent
+ ral Ohio Brass Band\, and the Salt River Brass Band.  From 2016 to 2019 h
+ e served as the director of the River Brass Band in Newburgh\, IN.\nAs a 
+ teacher and educator\, Pat’s students are of the highest caliber\, winnin
+ g numerous competitions and going on to successful careers in music.  In 
+ addition to his students at Kentucky Wesleyan\, he is in demand as a priv
+ ate tutor in the Southwest-Indiana\, Northwest-Kentucky area where he mai
+ ntains a full studio of primary students.  Since 2010\, Stuckemeyer has s
+ erved on the Executive Committee of the International Tuba Euphonium Asso
+ ciation as Treasurer.  A published author\, Stuckemeyer has written artic
+ les about low brass education and pedagogy and is consistently recommende
+ d by others in his field as an expert resource.\nStuckemeyer holds a Bach
+ elor of Music and Bachelor of Music Education from the Conservatory of Mu
+ sic at Capital University\, a Master of Music from the University of Kans
+ as\, an Artist Diploma from the Royal Northern College of Music in the Un
+ ited Kingdom\, and the Doctorate of Musical Arts degree from Arizona Stat
+ e University.  Dr. Stuckemeyer credits his success to his teachers: Sam P
+ ilafian\, Patrick Sheridan\, Steven Mead\, Scott Watson\, Paul Droste\, T
+ homas Zugger and K. Kim Fillingim.\n\nHosted by: Brass Music Society\n\nA
+ dditional Information can be found at: https://miami.campuslabs.com/engag
+ e/event/11170493
+DTEND:20250321T181500Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250321T172500Z
+GEO:25.718660;-80.280230
+LOCATION:RC 102
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Dr. Pat Stuckemeyer MASTERCLASS
+UID:https://miami.campuslabs.com/engage/event/11170493
+URL:https://miami.campuslabs.com/engage/event/11170493
+X-HOSTS:Brass Music Society
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Social
+CATEGORIES:Community Outreach and Social Change
+CATEGORIES:Religious & Spiritual
+DESCRIPTION:Free dinner inviting all students to eat fried fish (and veget
+ able options) in observance of the Lenten tradition of abstaining from me
+ at on Fridays.\n\nHosted by: Catholic Campus Ministry\n\nAdditional Infor
+ mation can be found at: https://miami.campuslabs.com/engage/event/1114008
+ 8
+DTEND:20250322T010000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250321T230000Z
+GEO:25.718280;-80.275610
+LOCATION:Catholic Center
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:UCatholic Fish Fry
+UID:https://miami.campuslabs.com/engage/event/11140088
+URL:https://miami.campuslabs.com/engage/event/11140088
+X-HOSTS:Catholic Campus Ministry
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:ThoughtfulLearning
+CATEGORIES:Academic/Honorary/Professional
+DESCRIPTION:Join us for our last installment of our speaker series focusin
+ g on careers in research!\n\nHosted by: Empowerment\, Sustainability\, an
+ d Growth Honor Society\n\nAdditional Information can be found at: https:/
+ /miami.campuslabs.com/engage/event/10834340
+DTEND:20250324T233000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250324T220000Z
+LOCATION:TBD
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Speaker Series: Research
+UID:https://miami.campuslabs.com/engage/event/10834340
+URL:https://miami.campuslabs.com/engage/event/10834340
+X-HOSTS:Empowerment\, Sustainability\, and Growth Honor Society
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:GroupBusiness
+CATEGORIES:Programming Boards
+DESCRIPTION:The Executive Board will be meeting to discuss co-sponsorships
+ \, behind-the-scenes themes\, and more!\n\nHosted by: Hurricane Productio
+ ns\n\nAdditional Information can be found at: https://miami.campuslabs.co
+ m/engage/event/10905615
+DTEND:20250325T220000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250325T210000Z
+LOCATION:Shalala Student Center - HP Suite
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:HP Executive Board Meeting
+UID:https://miami.campuslabs.com/engage/event/10905615
+URL:https://miami.campuslabs.com/engage/event/10905615
+X-HOSTS:Hurricane Productions
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+DESCRIPTION:Come garden with us!\n\nHosted by: CommUnity Garden\n\nAdditio
+ nal Information can be found at: https://miami.campuslabs.com/engage/even
+ t/11057564
+DTEND:20250325T220000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250325T210000Z
+LOCATION:John C. Gifford Arboretum
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tuesday Garden Hour
+UID:https://miami.campuslabs.com/engage/event/11057564
+URL:https://miami.campuslabs.com/engage/event/11057564
+X-HOSTS:CommUnity Garden
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Spirituality
+DESCRIPTION:Join us at the Rathskeller every Tuesday night from 6:30 - 8:0
+ 0 for some pub style trivia! Follow us on Instagram to see any upcoming t
+ hemed trivia nights we have coming up.\n\nHosted by: Rathskeller\n\nAddit
+ ional Information can be found at: https://miami.campuslabs.com/engage/ev
+ ent/10805318
+DTEND:20250326T000000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250325T223000Z
+LOCATION:Rathskeller
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Trivia Tuesday
+UID:https://miami.campuslabs.com/engage/event/10805318
+URL:https://miami.campuslabs.com/engage/event/10805318
+X-HOSTS:Rathskeller
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+DESCRIPTION:Come garden with us! \n\nHosted by: CommUnity Garden\n\nAdditi
+ onal Information can be found at: https://miami.campuslabs.com/engage/eve
+ nt/11057653
+DTEND:20250326T210000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250326T200000Z
+LOCATION:John C. Gifford Arboretum
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Wednesday Garden Hour
+UID:https://miami.campuslabs.com/engage/event/11057653
+URL:https://miami.campuslabs.com/engage/event/11057653
+X-HOSTS:CommUnity Garden
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Arts
+DESCRIPTION:The mic's are hot and the lights are on\, come to the Rat ever
+ y Wednesday for some karaoke from 6:30 - 8:00 p.m. Follow us on Instagram
+  to see any upcoming karaoke themes!\n\nHosted by: Rathskeller\n\nAdditio
+ nal Information can be found at: https://miami.campuslabs.com/engage/even
+ t/10805406
+DTEND:20250327T000000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250326T223000Z
+LOCATION:Rathskeller
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Karaoke Wednesday
+UID:https://miami.campuslabs.com/engage/event/10805406
+URL:https://miami.campuslabs.com/engage/event/10805406
+X-HOSTS:Rathskeller
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:ThoughtfulLearning
+CATEGORIES:Academic/Honorary/Professional
+CATEGORIES:Communities
+CATEGORIES:Community Outreach and Social Change
+CATEGORIES:Health & Wellness
+DESCRIPTION:Join us as we host CapYear for a Clinical Experience Workshop 
+ on Wednesday\, March 26 from 7-8 PM via Zoom!\n\nHosted by: American Medi
+ cal Student Association\n\nAdditional Information can be found at: https:
+ //miami.campuslabs.com/engage/event/11142254
+DTEND:20250327T000000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250326T230000Z
+LOCATION:Zoom
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:AMSA x CapYear Clinical Experience Workshop
+UID:https://miami.campuslabs.com/engage/event/11142254
+URL:https://miami.campuslabs.com/engage/event/11142254
+X-HOSTS:American Medical Student Association
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Arts
+CATEGORIES:Communities
+CATEGORIES:Community Outreach and Social Change
+CATEGORIES:Multicultural and Identity-Based
+CATEGORIES:Performing Arts
+DESCRIPTION:The moment you’ve all been waiting for has finally arrived!! S
+ pectrUM’s 12th annual DragOUT is set to take place on March 26th\, 7PM - 
+ 10PM in the Shalala Grand Ballrooms. Enjoy performances by local\, profes
+ sional drag artists and cheer on student competitors! This being a charit
+ y drag show\, part of the proceeds will benefit The Alliance for LGBTQ Yo
+ uth\, an organization that provides support for LGBTQ youth in South Flor
+ ida. Everyone is welcome to attend and support our mission of fostering p
+ ride at UM. The event is 18+\, and cash and digital donations will be acc
+ epted. Doors open at 6 PM\, and the show starts at 7 PM. Join us for a gr
+ and event that is sure to go down in HERstory!!\n\nHosted by: SpectrUM\n\
+ nAdditional Information can be found at: https://miami.campuslabs.com/eng
+ age/event/11012924
+DTEND:20250327T020000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250326T230000Z
+GEO:25.719300;-80.279050
+LOCATION:Shalala Student Center - Combined Grand Ballrooms
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:DragOut 2025
+UID:https://miami.campuslabs.com/engage/event/11012924
+URL:https://miami.campuslabs.com/engage/event/11012924
+X-HOSTS:SpectrUM
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Social
+DESCRIPTION:Our Survivor Luncheon\, held in the Shalala Student Center 314
+ \, Ballroom West\, is held at 4:30 PM prior to our annual event on the Fo
+ ote Green on March 27\, 2025. We host this lunch prior to the event to br
+ ing together survivors\, caregivers\, and overall individuals of our comm
+ unity for a special event to celebrate all that they have accomplished in
+  their fight. \nEach survivor is able to bring one caregiver or guest who
+  has stayed close to them throughout their journey. We will have catered 
+ lunch and drinks for all to enjoy while sharing stories and celebrating o
+ ne another! It is also the perfect opportunity to get to know one another
+  and relax before the fun of our event at 5:30 PM\, Wild About Curing Can
+ cer on the Foote Green! Please join us by registering with the link on ou
+ r Instagram: @umrelayforlife or you may reach out to our Celebration Chai
+ r\, Kinjal Patel\, at kmp247@miami.edu. Thank you and we hope to see you 
+ there!\n\nHosted by: Relay for Life\n\nAdditional Information can be foun
+ d at: https://miami.campuslabs.com/engage/event/11110640
+DTEND:20250327T213000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250327T203000Z
+LOCATION:Shalala Student Center\, Ballroom West\, 314
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:SURVIVOR LUNCHEON 2025 💜
+UID:https://miami.campuslabs.com/engage/event/11110640
+URL:https://miami.campuslabs.com/engage/event/11110640
+X-HOSTS:Relay for Life
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Arts
+DESCRIPTION:Every Thursday on the Rathskeller patio we feature some studen
+ t DJs. Grab a drink and a snack and listen to their set from 5:00 - 7:00 
+ p.m.\n\nHosted by: Rathskeller\n\nAdditional Information can be found at:
+  https://miami.campuslabs.com/engage/event/10805337
+DTEND:20250327T230000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250327T210000Z
+LOCATION:Rathskeller
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:DJ Thursday
+UID:https://miami.campuslabs.com/engage/event/10805337
+URL:https://miami.campuslabs.com/engage/event/10805337
+X-HOSTS:Rathskeller
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Cultural
+CATEGORIES:Multicultural and Identity-Based
+DESCRIPTION:Join us in the Storm Surge for our biggest Squid Games themed 
+ event of the semester! You will be given your own IDs to be able to parti
+ cipate in Squid Games-based activities and indulge in delicious Korean sn
+ acks! \n\nHosted by: Korean Student Association \n\nAdditional Informatio
+ n can be found at: https://miami.campuslabs.com/engage/event/11127926
+DTEND:20250327T230000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250327T210000Z
+LOCATION:Storm Surge
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:KOSA: SQUID GAMES GBM
+UID:https://miami.campuslabs.com/engage/event/11127926
+URL:https://miami.campuslabs.com/engage/event/11127926
+X-HOSTS:Korean Student Association
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Fundraising
+CATEGORIES:Community Outreach and Social Change
+DESCRIPTION:Our annual Relay for Life event of 2025 is an event to celebra
+ te\, remember\, and FIGHT BACK against cancer! We will have games\, food 
+ trucks\, speakers\, music and dancing\, as well as other amazing features
+  for our final event of the semester. We would love it if you could join 
+ us for a night to celebrate all that we have raised throughout the 2024-2
+ 025 academic year as well as celebrate those who are survivors\, caregive
+ rs\, etc who will be joining us on this special night <3\n\nHosted by: Re
+ lay for Life\n\nAdditional Information can be found at: https://miami.cam
+ puslabs.com/engage/event/10697068
+DTEND:20250328T013000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250327T213000Z
+LOCATION:Foote Green
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:RELAY FOR LIFE 2025
+UID:https://miami.campuslabs.com/engage/event/10697068
+URL:https://miami.campuslabs.com/engage/event/10697068
+X-HOSTS:Relay for Life
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Social
+CATEGORIES:Fraternity & Sorority Life
+DESCRIPTION:Lights\, Camera\, Step! UM NPHC's Annual Greek Extrav brings B
+ lack Cinema to life with show-stopping performances inspired by the late 
+ '90s and early 2000s! Stay tuned for ticketing info and pricing 00 Doors 
+ open at 7:00 pm event starts at 7:30\n\nHosted by: Alpha Phi Alpha\, Alph
+ a Kappa Alpha\, Delta Sigma Theta\, Iota Phi Theta Fraternity\, Inc.\, Ka
+ ppa Alpha Psi\, National Pan-Hellenic Council\, Inc\, Omega Psi Phi\, Phi
+  Beta Sigma Fraternity\, Incorporated\, Sigma Gamma Rho\, Zeta Phi Beta\n
+ \nAdditional Information can be found at: https://miami.campuslabs.com/en
+ gage/event/11127954
+DTEND:20250329T020000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250328T230000Z
+LOCATION:Shalala Grand Ballrooms
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Greek Extravaganza
+UID:https://miami.campuslabs.com/engage/event/11127954
+URL:https://miami.campuslabs.com/engage/event/11127954
+X-HOSTS:Zeta Phi Beta
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+CATEGORIES:Community Outreach and Social Change
+DESCRIPTION:Join us with Lotus House Women and Children Shelter in organiz
+ ing and cleaning operations with their team! Volunteering will take place
+  on Sunday\, March 30th from 11 am - 2pm. Community Service hours will be
+  granted for those who attend. There are only 15 spots available\, so ple
+ ase fill out this google form by Friday\, March 7th to confirm your posit
+ ion! Volunteer Interest Form\n\nHosted by: Healing Across Borders\n\nAddi
+ tional Information can be found at: https://miami.campuslabs.com/engage/e
+ vent/11137695
+DTEND:20250330T180000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250330T150000Z
+GEO:25.789730;-80.199290
+LOCATION:Lotus House
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Healing Across Borders Lotus House Volunteering
+UID:https://miami.campuslabs.com/engage/event/11137695
+URL:https://miami.campuslabs.com/engage/event/11137695
+X-HOSTS:Healing Across Borders
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Social
+CATEGORIES:Communities
+CATEGORIES:Community Outreach and Social Change
+CATEGORIES:Multicultural and Identity-Based
+DESCRIPTION:Join the LGBTQ Student Center for Transgender Day of Visibilit
+ y!\n\n\n\n\n\n\n\n\n\nTransgender Day of Visibility (TDOV)\, observed on 
+ March 31\, celebrates the lives and contributions of transgender people w
+ hile raising awareness about the challenges they face\, such as discrimin
+ ation and violence. It highlights the importance of visibility\, recogniz
+ ing the resilience of the transgender community.\n\n\n\n\n\n\n\n\n\n \n\n
+ Hosted by: LGBTQ Student Center\n\nAdditional Information can be found at
+ : https://miami.campuslabs.com/engage/event/11127429
+DTEND:20250331T180000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250331T160000Z
+LOCATION:UC Breezeway
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Transgender Day of Visibility
+UID:https://miami.campuslabs.com/engage/event/11127429
+URL:https://miami.campuslabs.com/engage/event/11127429
+X-HOSTS:LGBTQ Student Center
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:ThoughtfulLearning
+CATEGORIES:Academic/Honorary/Professional
+DESCRIPTION:We will be hosting Dr. Brian Osman\, an anesthesiologist and p
+ rofessor of clinical anesthesiology at the Miller School of Medicine. Joi
+ n us as we hear from his experiences and enjoy catered chick-fil-a.\n\nHo
+ sted by: Alpha Epsilon Delta\n\nAdditional Information can be found at: h
+ ttps://miami.campuslabs.com/engage/event/11170479
+DTEND:20250401T010000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250401T000000Z
+GEO:25.722190;-80.275990
+LOCATION:Whitten LC
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:AED x Dr. Osman
+UID:https://miami.campuslabs.com/engage/event/11170479
+URL:https://miami.campuslabs.com/engage/event/11170479
+X-HOSTS:Alpha Epsilon Delta
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Social
+CATEGORIES:Communities
+CATEGORIES:Religious & Spiritual
+DESCRIPTION:Join us March 31st at the Bill Cosford Cinema in Dooly Memoria
+ l at 8pm for a movie night and social! The Price of Egypt is incredible f
+ ilm depicting the early life of Moses in the stories accounted in the Boo
+ k of Exodus. This film has beautiful visuals and an amazing soundtrack to
+  accompany the theme and narrative throughout. We hope to share in this e
+ xciting social with you and can't wait to see you there! \n\nHosted by: C
+ atholic Campus Ministry\n\nAdditional Information can be found at: https:
+ //miami.campuslabs.com/engage/event/11140087
+DTEND:20250401T023000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250401T000000Z
+GEO:25.722860;-80.276830
+LOCATION:Bill Cosford Cinema
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:The Prince of Egypt Movie Night and Social
+UID:https://miami.campuslabs.com/engage/event/11140087
+URL:https://miami.campuslabs.com/engage/event/11140087
+X-HOSTS:Catholic Campus Ministry
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Fundraising
+DESCRIPTION:We will be tabling selling items to fundraise for our philanth
+ ropy partner\, Children's Miracle Network. \n\nHosted by: Phi Delta Epsil
+ on\n\nAdditional Information can be found at: https://miami.campuslabs.co
+ m/engage/event/11095514
+DTEND:20250401T183000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250401T143000Z
+LOCATION:By Richter Library
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tabling Event
+UID:https://miami.campuslabs.com/engage/event/11095514
+URL:https://miami.campuslabs.com/engage/event/11095514
+X-HOSTS:Phi Delta Epsilon
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Social
+CATEGORIES:Communities
+CATEGORIES:Multicultural and Identity-Based
+DESCRIPTION:Join us for tabling to kickoff College Pride Month!\n \nWe cel
+ ebrate Campus Pride Month in April to highlight the LGBTQ community! Whil
+ e June is nationally recognized as Pride\, we are cognizant that most stu
+ dents are not on campus in June\, so having Pride Month in April allows u
+ s to celebrate and increase visibility for our LGBTQIA+ students while co
+ llege classes are in session.\n\nHosted by: LGBTQ Student Center\n\nAddit
+ ional Information can be found at: https://miami.campuslabs.com/engage/ev
+ ent/11150838
+DTEND:20250401T200000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250401T160000Z
+LOCATION:Westbrook Walkway
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:College Pride Month Kickoff Tabling
+UID:https://miami.campuslabs.com/engage/event/11150838
+URL:https://miami.campuslabs.com/engage/event/11150838
+X-HOSTS:LGBTQ Student Center
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Social
+CATEGORIES:Communities
+CATEGORIES:Multicultural and Identity-Based
+DESCRIPTION:Join the LGBTQ Student Center for our monthly event\, Mid-Day 
+ Mingle!\n \nWe will be having supplies to create signs for Miami Beach Pr
+ ide\, snacks to enjoy\, and a community space to gather.\n \nHope to see 
+ you there!\n\nHosted by: LGBTQ Student Center\n\nAdditional Information c
+ an be found at: https://miami.campuslabs.com/engage/event/11150961
+DTEND:20250401T203000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250401T183000Z
+LOCATION:LGBTQ Student Center (Whitten UC 2300H)
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Mid-Day Mingle: Pride Sign-Making
+UID:https://miami.campuslabs.com/engage/event/11150961
+URL:https://miami.campuslabs.com/engage/event/11150961
+X-HOSTS:LGBTQ Student Center
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:GroupBusiness
+CATEGORIES:Programming Boards
+DESCRIPTION:The Executive Board will be meeting to discuss co-sponsorships
+ \, behind-the-scenes themes\, and more!\n\nHosted by: Hurricane Productio
+ ns\n\nAdditional Information can be found at: https://miami.campuslabs.co
+ m/engage/event/10905616
+DTEND:20250401T220000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250401T210000Z
+LOCATION:Shalala Student Center - HP Suite
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:HP Executive Board Meeting
+UID:https://miami.campuslabs.com/engage/event/10905616
+URL:https://miami.campuslabs.com/engage/event/10905616
+X-HOSTS:Hurricane Productions
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+DESCRIPTION:Come garden with us!\n\nHosted by: CommUnity Garden\n\nAdditio
+ nal Information can be found at: https://miami.campuslabs.com/engage/even
+ t/11057565
+DTEND:20250401T220000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250401T210000Z
+LOCATION:John C. Gifford Arboretum
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tuesday Garden Hour
+UID:https://miami.campuslabs.com/engage/event/11057565
+URL:https://miami.campuslabs.com/engage/event/11057565
+X-HOSTS:CommUnity Garden
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+CATEGORIES:Community Outreach and Social Change
+DESCRIPTION:In collaboration with F Fentanyl and the Sandler Center\, we w
+ ill be hosting monthly Narcan trainings. Free Narcan\, test strips\, and 
+ resources will also be passed out!\nPlease RSVP: https://umiami.qualtrics
+ .com/jfe/form/SV_eUTtAY1jHTzuhTw\n\nHosted by: URecovery: A Collegiate Re
+ covery Community\n\nAdditional Information can be found at: https://miami
+ .campuslabs.com/engage/event/11018072
+DTEND:20250401T233000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250401T223000Z
+LOCATION:Shalala Senate Room
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Narcan Trainings
+UID:https://miami.campuslabs.com/engage/event/11018072
+URL:https://miami.campuslabs.com/engage/event/11018072
+X-HOSTS:URecovery: A Collegiate Recovery Community
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Spirituality
+DESCRIPTION:Join us at the Rathskeller every Tuesday night from 6:30 - 8:0
+ 0 for some pub style trivia! Follow us on Instagram to see any upcoming t
+ hemed trivia nights we have coming up.\n\nHosted by: Rathskeller\n\nAddit
+ ional Information can be found at: https://miami.campuslabs.com/engage/ev
+ ent/10805319
+DTEND:20250402T000000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250401T223000Z
+LOCATION:Rathskeller
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Trivia Tuesday
+UID:https://miami.campuslabs.com/engage/event/10805319
+URL:https://miami.campuslabs.com/engage/event/10805319
+X-HOSTS:Rathskeller
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+DESCRIPTION:Come garden with us! \n\nHosted by: CommUnity Garden\n\nAdditi
+ onal Information can be found at: https://miami.campuslabs.com/engage/eve
+ nt/11057654
+DTEND:20250402T210000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250402T200000Z
+LOCATION:John C. Gifford Arboretum
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Wednesday Garden Hour
+UID:https://miami.campuslabs.com/engage/event/11057654
+URL:https://miami.campuslabs.com/engage/event/11057654
+X-HOSTS:CommUnity Garden
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Arts
+DESCRIPTION:HP Concerts is hosting a student concert series at the Rathske
+ ller the first Wednesday of every month from 6:30 - 8:00 p.m.\n\nHosted b
+ y: Rathskeller\n\nAdditional Information can be found at: https://miami.c
+ ampuslabs.com/engage/event/10805382
+DTEND:20250403T000000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250402T223000Z
+LOCATION:Rathskeller
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rhythms @ The Rat
+UID:https://miami.campuslabs.com/engage/event/10805382
+URL:https://miami.campuslabs.com/engage/event/10805382
+X-HOSTS:Rathskeller
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Arts
+DESCRIPTION:The mic's are hot and the lights are on\, come to the Rat ever
+ y Wednesday for some karaoke from 6:30 - 8:00 p.m. Follow us on Instagram
+  to see any upcoming karaoke themes!\n\nHosted by: Rathskeller\n\nAdditio
+ nal Information can be found at: https://miami.campuslabs.com/engage/even
+ t/10805407
+DTEND:20250403T000000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250402T223000Z
+LOCATION:Rathskeller
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Karaoke Wednesday
+UID:https://miami.campuslabs.com/engage/event/10805407
+URL:https://miami.campuslabs.com/engage/event/10805407
+X-HOSTS:Rathskeller
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Arts
+DESCRIPTION:Join Art of Healing for our second GBM of the semester where w
+ e will be making St. Patrick's Day-themed crafts for children at the Rona
+ ld McDonald Hospital and connecting with other Art of Healing members. We
+  will be creating shamrock rings out of pipe cleaners and leprechaun draw
+ ings on construction paper!\n\nHosted by: Art of Healing\n\nAdditional In
+ formation can be found at: https://miami.campuslabs.com/engage/event/1109
+ 3731
+DTEND:20250403T220000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250403T210000Z
+LOCATION:Shalala 302 (Senate Room)
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Art of Healing GBM
+UID:https://miami.campuslabs.com/engage/event/11093731
+URL:https://miami.campuslabs.com/engage/event/11093731
+X-HOSTS:Art of Healing
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Arts
+DESCRIPTION:Every Thursday on the Rathskeller patio we feature some studen
+ t DJs. Grab a drink and a snack and listen to their set from 5:00 - 7:00 
+ p.m.\n\nHosted by: Rathskeller\n\nAdditional Information can be found at:
+  https://miami.campuslabs.com/engage/event/10805338
+DTEND:20250403T230000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250403T210000Z
+LOCATION:Rathskeller
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:DJ Thursday
+UID:https://miami.campuslabs.com/engage/event/10805338
+URL:https://miami.campuslabs.com/engage/event/10805338
+X-HOSTS:Rathskeller
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Social
+CATEGORIES:Communities
+CATEGORIES:Multicultural and Identity-Based
+CATEGORIES:Programming Boards
+CATEGORIES:Departments
+DESCRIPTION:\n\nJoin the LGBTQ Student Center for our Pride Coalition Stud
+ ent Leaders Roundtable!\n \nAll LGBTQ+ student leaders welcome!\n \nThis 
+ is a space to discuss current events related to the LGBTQ+ community on-c
+ ampus\, ways to get involved\, and network with other LGBTQ+ student lead
+ ers.\n \nIf you are interested\, send an RSVP to LGBTQ@miami.edu to reser
+ ve your space and ensure a meal will be provided for you.\n\n\n \n\nHoste
+ d by: LGBTQ Student Center\n\nAdditional Information can be found at: htt
+ ps://miami.campuslabs.com/engage/event/11150976
+DTEND:20250404T183000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250404T163000Z
+LOCATION:Whitten University Center (UC) 2300A
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Pride Coalition Leaders Roundtable
+UID:https://miami.campuslabs.com/engage/event/11150976
+URL:https://miami.campuslabs.com/engage/event/11150976
+X-HOSTS:LGBTQ Student Center
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Social
+CATEGORIES:Communities
+CATEGORIES:Multicultural and Identity-Based
+DESCRIPTION:Join the LGBTQ Student Center for Miami Beach Pride!\nWe will 
+ have a float in the parade. You will have a chance to walk in the parade 
+ or be on the float!\nWe will have buses that will transport you to and fr
+ om Miami Beach! \nWe will also have UPride T-Shirts available for all who
+  join us. \nScan the QR code to signup to join us at Miami Beach Pride!\n
+ \nHosted by: LGBTQ Student Center\n\nAdditional Information can be found 
+ at: https://miami.campuslabs.com/engage/event/11151038
+DTEND:20250406T200000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250406T133000Z
+LOCATION:Meet at Stanford Circle
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Miami Beach Pride Parade
+UID:https://miami.campuslabs.com/engage/event/11151038
+URL:https://miami.campuslabs.com/engage/event/11151038
+X-HOSTS:LGBTQ Student Center
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:GroupBusiness
+CATEGORIES:Programming Boards
+DESCRIPTION:The Executive Board will be meeting to discuss co-sponsorships
+ \, behind-the-scenes themes\, and more!\n\nHosted by: Hurricane Productio
+ ns\n\nAdditional Information can be found at: https://miami.campuslabs.co
+ m/engage/event/10905617
+DTEND:20250408T220000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250408T210000Z
+LOCATION:Shalala Student Center - HP Suite
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:HP Executive Board Meeting
+UID:https://miami.campuslabs.com/engage/event/10905617
+URL:https://miami.campuslabs.com/engage/event/10905617
+X-HOSTS:Hurricane Productions
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+DESCRIPTION:Come garden with us!\n\nHosted by: CommUnity Garden\n\nAdditio
+ nal Information can be found at: https://miami.campuslabs.com/engage/even
+ t/11057566
+DTEND:20250408T220000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250408T210000Z
+LOCATION:John C. Gifford Arboretum
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tuesday Garden Hour
+UID:https://miami.campuslabs.com/engage/event/11057566
+URL:https://miami.campuslabs.com/engage/event/11057566
+X-HOSTS:CommUnity Garden
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:ThoughtfulLearning
+CATEGORIES:Academic/Honorary/Professional
+CATEGORIES:Community Outreach and Social Change
+DESCRIPTION:Day 2 of Financial Literacy Spirit Week - Workshop\n\nHosted b
+ y: Canes Invested \n\nAdditional Information can be found at: https://mia
+ mi.campuslabs.com/engage/event/10988928
+DTEND:20250408T233000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250408T223000Z
+GEO:25.719300;-80.279050
+LOCATION:Shalala
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Canes Invested Financial Literacy Spirit Week
+UID:https://miami.campuslabs.com/engage/event/10988928
+URL:https://miami.campuslabs.com/engage/event/10988928
+X-HOSTS:Canes Invested
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Spirituality
+DESCRIPTION:Join us at the Rathskeller every Tuesday night from 6:30 - 8:0
+ 0 for some pub style trivia! Follow us on Instagram to see any upcoming t
+ hemed trivia nights we have coming up.\n\nHosted by: Rathskeller\n\nAddit
+ ional Information can be found at: https://miami.campuslabs.com/engage/ev
+ ent/10805320
+DTEND:20250409T000000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250408T223000Z
+LOCATION:Rathskeller
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Trivia Tuesday
+UID:https://miami.campuslabs.com/engage/event/10805320
+URL:https://miami.campuslabs.com/engage/event/10805320
+X-HOSTS:Rathskeller
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+DESCRIPTION:Come garden with us! \n\nHosted by: CommUnity Garden\n\nAdditi
+ onal Information can be found at: https://miami.campuslabs.com/engage/eve
+ nt/11057655
+DTEND:20250409T210000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250409T200000Z
+LOCATION:John C. Gifford Arboretum
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Wednesday Garden Hour
+UID:https://miami.campuslabs.com/engage/event/11057655
+URL:https://miami.campuslabs.com/engage/event/11057655
+X-HOSTS:CommUnity Garden
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Arts
+DESCRIPTION:The mic's are hot and the lights are on\, come to the Rat ever
+ y Wednesday for some karaoke from 6:30 - 8:00 p.m. Follow us on Instagram
+  to see any upcoming karaoke themes!\n\nHosted by: Rathskeller\n\nAdditio
+ nal Information can be found at: https://miami.campuslabs.com/engage/even
+ t/10805408
+DTEND:20250410T000000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250409T223000Z
+LOCATION:Rathskeller
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Karaoke Wednesday
+UID:https://miami.campuslabs.com/engage/event/10805408
+URL:https://miami.campuslabs.com/engage/event/10805408
+X-HOSTS:Rathskeller
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:ThoughtfulLearning
+CATEGORIES:Academic/Honorary/Professional
+DESCRIPTION:Pre-Veterinary society general body meeting.\n\nHosted by: Pre
+ -Veterinary Society\n\nAdditional Information can be found at: https://mi
+ ami.campuslabs.com/engage/event/10964807
+DTEND:20250410T013000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250410T000000Z
+LOCATION:Cox Science 166
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:General Body Meeting
+UID:https://miami.campuslabs.com/engage/event/10964807
+URL:https://miami.campuslabs.com/engage/event/10964807
+X-HOSTS:Pre-Veterinary Society
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Arts
+DESCRIPTION:Every Thursday on the Rathskeller patio we feature some studen
+ t DJs. Grab a drink and a snack and listen to their set from 5:00 - 7:00 
+ p.m.\n\nHosted by: Rathskeller\n\nAdditional Information can be found at:
+  https://miami.campuslabs.com/engage/event/10805339
+DTEND:20250410T230000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250410T210000Z
+LOCATION:Rathskeller
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:DJ Thursday
+UID:https://miami.campuslabs.com/engage/event/10805339
+URL:https://miami.campuslabs.com/engage/event/10805339
+X-HOSTS:Rathskeller
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Social
+CATEGORIES:Academic/Honorary/Professional
+DESCRIPTION:Join us for an evening of drinks and light refreshments as we 
+ show our appreciation for the sponsors\, faculty\, and members who suppor
+ ted us throughout the year!\nRSVP by March 28\n*Cocktail Attire*\n\nHoste
+ d by: American Society of Civil Engineers\n\nAdditional Information can b
+ e found at: https://miami.campuslabs.com/engage/event/11112939
+DTEND:20250412T010000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250411T220000Z
+GEO:25.776590;-80.134370
+LOCATION:La Terraza Rooftop at Kimpton Angler's Hotel
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:ASCE Gala
+UID:https://miami.campuslabs.com/engage/event/11112939
+URL:https://miami.campuslabs.com/engage/event/11112939
+X-HOSTS:American Society of Civil Engineers
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Fundraising
+DESCRIPTION:Anatomy Fashion Show is a fundraising event where we showcase 
+ the anatomy of the human body on models that walk down the runway. 100% o
+ f the proceeds made from this event go to Children's Miracle Network. Thi
+ s year's AFS is titled Anatomy Fashion Show: Survival of the Phittest! Th
+ e theme is based on the reality TV show Survivor. At AFS\, we have dance 
+ performances\, live auctions/raffles\, and more\, all focusing on raising
+  money for our local Children's Miracle Network Hospital–Nicklaus Childre
+ n’s Hospital. \n\nHosted by: Phi Delta Epsilon\n\nAdditional Information 
+ can be found at: https://miami.campuslabs.com/engage/event/11101732
+DTEND:20250414T020000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250413T220000Z
+LOCATION:Newman Alumni Center
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Anatomy Fashion Show
+UID:https://miami.campuslabs.com/engage/event/11101732
+URL:https://miami.campuslabs.com/engage/event/11101732
+X-HOSTS:Phi Delta Epsilon
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:GroupBusiness
+CATEGORIES:Academic/Honorary/Professional
+DESCRIPTION:Join us for USPORT's Executive Board Elections for the 2025-26
+  school year\n\nHosted by: USPORT (Undergraduate Sport Professionals' Org
+ anization for Research & Training)\n\nAdditional Information can be found
+  at: https://miami.campuslabs.com/engage/event/11103698
+DTEND:20250415T000000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250414T230000Z
+GEO:25.722830;-80.275550
+LOCATION:Whitten LC 194
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Elections
+UID:https://miami.campuslabs.com/engage/event/11103698
+URL:https://miami.campuslabs.com/engage/event/11103698
+X-HOSTS:USPORT (Undergraduate Sport Professionals' Organization for Resear
+ ch & Training)
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:GroupBusiness
+CATEGORIES:Programming Boards
+DESCRIPTION:The Executive Board will be meeting to discuss co-sponsorships
+ \, behind-the-scenes themes\, and more!\n\nHosted by: Hurricane Productio
+ ns\n\nAdditional Information can be found at: https://miami.campuslabs.co
+ m/engage/event/10905618
+DTEND:20250415T220000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250415T210000Z
+LOCATION:Shalala Student Center - HP Suite
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:HP Executive Board Meeting
+UID:https://miami.campuslabs.com/engage/event/10905618
+URL:https://miami.campuslabs.com/engage/event/10905618
+X-HOSTS:Hurricane Productions
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+DESCRIPTION:Come garden with us!\n\nHosted by: CommUnity Garden\n\nAdditio
+ nal Information can be found at: https://miami.campuslabs.com/engage/even
+ t/11057567
+DTEND:20250415T220000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250415T210000Z
+LOCATION:John C. Gifford Arboretum
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tuesday Garden Hour
+UID:https://miami.campuslabs.com/engage/event/11057567
+URL:https://miami.campuslabs.com/engage/event/11057567
+X-HOSTS:CommUnity Garden
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Spirituality
+DESCRIPTION:Join us at the Rathskeller every Tuesday night from 6:30 - 8:0
+ 0 for some pub style trivia! Follow us on Instagram to see any upcoming t
+ hemed trivia nights we have coming up.\n\nHosted by: Rathskeller\n\nAddit
+ ional Information can be found at: https://miami.campuslabs.com/engage/ev
+ ent/10805321
+DTEND:20250416T000000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250415T223000Z
+LOCATION:Rathskeller
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Trivia Tuesday
+UID:https://miami.campuslabs.com/engage/event/10805321
+URL:https://miami.campuslabs.com/engage/event/10805321
+X-HOSTS:Rathskeller
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Arts
+DESCRIPTION:Semi-annual showcase at the Rock Plaza! Come see our self-chor
+ eographed dances we created over the semester. \n\nHosted by: KAOS\n\nAdd
+ itional Information can be found at: https://miami.campuslabs.com/engage/
+ event/10973193
+DTEND:20250416T020000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250416T010000Z
+LOCATION:The Rock (by the U Statue)
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:SPRING 2025 SHOWCASE
+UID:https://miami.campuslabs.com/engage/event/10973193
+URL:https://miami.campuslabs.com/engage/event/10973193
+X-HOSTS:KAOS
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+DESCRIPTION:Come garden with us! \n\nHosted by: CommUnity Garden\n\nAdditi
+ onal Information can be found at: https://miami.campuslabs.com/engage/eve
+ nt/11057656
+DTEND:20250416T210000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250416T200000Z
+LOCATION:John C. Gifford Arboretum
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Wednesday Garden Hour
+UID:https://miami.campuslabs.com/engage/event/11057656
+URL:https://miami.campuslabs.com/engage/event/11057656
+X-HOSTS:CommUnity Garden
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Arts
+DESCRIPTION:The mic's are hot and the lights are on\, come to the Rat ever
+ y Wednesday for some karaoke from 6:30 - 8:00 p.m. Follow us on Instagram
+  to see any upcoming karaoke themes!\n\nHosted by: Rathskeller\n\nAdditio
+ nal Information can be found at: https://miami.campuslabs.com/engage/even
+ t/10805409
+DTEND:20250417T000000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250416T223000Z
+LOCATION:Rathskeller
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Karaoke Wednesday
+UID:https://miami.campuslabs.com/engage/event/10805409
+URL:https://miami.campuslabs.com/engage/event/10805409
+X-HOSTS:Rathskeller
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Arts
+DESCRIPTION:Every Thursday on the Rathskeller patio we feature some studen
+ t DJs. Grab a drink and a snack and listen to their set from 5:00 - 7:00 
+ p.m.\n\nHosted by: Rathskeller\n\nAdditional Information can be found at:
+  https://miami.campuslabs.com/engage/event/10805340
+DTEND:20250417T230000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250417T210000Z
+LOCATION:Rathskeller
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:DJ Thursday
+UID:https://miami.campuslabs.com/engage/event/10805340
+URL:https://miami.campuslabs.com/engage/event/10805340
+X-HOSTS:Rathskeller
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Social
+CATEGORIES:Academic/Honorary/Professional
+DESCRIPTION:\n\n\n\nJoin us for our End-of-Year Banquet as we celebrate ou
+ r achievements\, recognize outstanding members\, and reflect on an incred
+ ible year. Enjoy a night of good food\, great company\, and special award
+ s!\n\n\n\n\n\nHosted by: American Medical Student Association\n\nAddition
+ al Information can be found at: https://miami.campuslabs.com/engage/event
+ /10976118
+DTEND:20250422T020000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250422T000000Z
+LOCATION:Shalala Grand Ballroom East
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:End-of-Year Banquet
+UID:https://miami.campuslabs.com/engage/event/10976118
+URL:https://miami.campuslabs.com/engage/event/10976118
+X-HOSTS:American Medical Student Association
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:GroupBusiness
+CATEGORIES:Programming Boards
+DESCRIPTION:The Executive Board will be meeting to discuss co-sponsorships
+ \, behind-the-scenes themes\, and more!\n\nHosted by: Hurricane Productio
+ ns\n\nAdditional Information can be found at: https://miami.campuslabs.co
+ m/engage/event/10905619
+DTEND:20250422T220000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250422T210000Z
+LOCATION:Shalala Student Center - HP Suite
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:HP Executive Board Meeting
+UID:https://miami.campuslabs.com/engage/event/10905619
+URL:https://miami.campuslabs.com/engage/event/10905619
+X-HOSTS:Hurricane Productions
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+DESCRIPTION:Come garden with us!\n\nHosted by: CommUnity Garden\n\nAdditio
+ nal Information can be found at: https://miami.campuslabs.com/engage/even
+ t/11057568
+DTEND:20250422T220000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250422T210000Z
+LOCATION:John C. Gifford Arboretum
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tuesday Garden Hour
+UID:https://miami.campuslabs.com/engage/event/11057568
+URL:https://miami.campuslabs.com/engage/event/11057568
+X-HOSTS:CommUnity Garden
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Spirituality
+DESCRIPTION:Join us at the Rathskeller every Tuesday night from 6:30 - 8:0
+ 0 for some pub style trivia! Follow us on Instagram to see any upcoming t
+ hemed trivia nights we have coming up.\n\nHosted by: Rathskeller\n\nAddit
+ ional Information can be found at: https://miami.campuslabs.com/engage/ev
+ ent/10805322
+DTEND:20250423T010000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250422T223000Z
+LOCATION:Rathskeller
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Trivia Tuesday
+UID:https://miami.campuslabs.com/engage/event/10805322
+URL:https://miami.campuslabs.com/engage/event/10805322
+X-HOSTS:Rathskeller
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+DESCRIPTION:Come garden with us! \n\nHosted by: CommUnity Garden\n\nAdditi
+ onal Information can be found at: https://miami.campuslabs.com/engage/eve
+ nt/11057657
+DTEND:20250423T210000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250423T200000Z
+LOCATION:John C. Gifford Arboretum
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Wednesday Garden Hour
+UID:https://miami.campuslabs.com/engage/event/11057657
+URL:https://miami.campuslabs.com/engage/event/11057657
+X-HOSTS:CommUnity Garden
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Arts
+DESCRIPTION:The mic's are hot and the lights are on\, come to the Rat ever
+ y Wednesday for some karaoke from 6:30 - 8:00 p.m. Follow us on Instagram
+  to see any upcoming karaoke themes!\n\nHosted by: Rathskeller\n\nAdditio
+ nal Information can be found at: https://miami.campuslabs.com/engage/even
+ t/10805410
+DTEND:20250424T000000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250423T223000Z
+LOCATION:Rathskeller
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Karaoke Wednesday
+UID:https://miami.campuslabs.com/engage/event/10805410
+URL:https://miami.campuslabs.com/engage/event/10805410
+X-HOSTS:Rathskeller
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:ThoughtfulLearning
+CATEGORIES:Academic/Honorary/Professional
+DESCRIPTION:Pre-Veterinary society general body meeting.\n\nHosted by: Pre
+ -Veterinary Society\n\nAdditional Information can be found at: https://mi
+ ami.campuslabs.com/engage/event/10964808
+DTEND:20250424T013000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250424T000000Z
+LOCATION:Cox Science 166
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:General Body Meeting
+UID:https://miami.campuslabs.com/engage/event/10964808
+URL:https://miami.campuslabs.com/engage/event/10964808
+X-HOSTS:Pre-Veterinary Society
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:Arts
+DESCRIPTION:Every Thursday on the Rathskeller patio we feature some studen
+ t DJs. Grab a drink and a snack and listen to their set from 5:00 - 7:00 
+ p.m.\n\nHosted by: Rathskeller\n\nAdditional Information can be found at:
+  https://miami.campuslabs.com/engage/event/10805341
+DTEND:20250424T230000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250424T210000Z
+LOCATION:Rathskeller
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:DJ Thursday
+UID:https://miami.campuslabs.com/engage/event/10805341
+URL:https://miami.campuslabs.com/engage/event/10805341
+X-HOSTS:Rathskeller
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+DESCRIPTION:Come garden with us!\n\nHosted by: CommUnity Garden\n\nAdditio
+ nal Information can be found at: https://miami.campuslabs.com/engage/even
+ t/11057569
+DTEND:20250429T220000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250429T210000Z
+LOCATION:John C. Gifford Arboretum
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tuesday Garden Hour
+UID:https://miami.campuslabs.com/engage/event/11057569
+URL:https://miami.campuslabs.com/engage/event/11057569
+X-HOSTS:CommUnity Garden
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+DESCRIPTION:Come garden with us! \n\nHosted by: CommUnity Garden\n\nAdditi
+ onal Information can be found at: https://miami.campuslabs.com/engage/eve
+ nt/11057658
+DTEND:20250430T210000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250430T200000Z
+LOCATION:John C. Gifford Arboretum
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Wednesday Garden Hour
+UID:https://miami.campuslabs.com/engage/event/11057658
+URL:https://miami.campuslabs.com/engage/event/11057658
+X-HOSTS:CommUnity Garden
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:ThoughtfulLearning
+CATEGORIES:Academic/Honorary/Professional
+DESCRIPTION:Pre-Veterinary society general body meeting.\n\nHosted by: Pre
+ -Veterinary Society\n\nAdditional Information can be found at: https://mi
+ ami.campuslabs.com/engage/event/10964809
+DTEND:20250501T013000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250501T000000Z
+LOCATION:Cox Science 166
+SEQUENCE:0
+STATUS:CANCELLED
+SUMMARY:General Body Meeting
+UID:https://miami.campuslabs.com/engage/event/10964809
+URL:https://miami.campuslabs.com/engage/event/10964809
+X-HOSTS:Pre-Veterinary Society
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+DESCRIPTION:Come garden with us!\n\nHosted by: CommUnity Garden\n\nAdditio
+ nal Information can be found at: https://miami.campuslabs.com/engage/even
+ t/11057570
+DTEND:20250506T220000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250506T210000Z
+LOCATION:John C. Gifford Arboretum
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tuesday Garden Hour
+UID:https://miami.campuslabs.com/engage/event/11057570
+URL:https://miami.campuslabs.com/engage/event/11057570
+X-HOSTS:CommUnity Garden
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+DESCRIPTION:Come garden with us! \n\nHosted by: CommUnity Garden\n\nAdditi
+ onal Information can be found at: https://miami.campuslabs.com/engage/eve
+ nt/11057659
+DTEND:20250507T210000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250507T200000Z
+LOCATION:John C. Gifford Arboretum
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Wednesday Garden Hour
+UID:https://miami.campuslabs.com/engage/event/11057659
+URL:https://miami.campuslabs.com/engage/event/11057659
+X-HOSTS:CommUnity Garden
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:CommunityService
+CATEGORIES:Community Outreach and Social Change
+DESCRIPTION:Join us with Amor y Fuerza on their initiative to provide tuto
+ ring services to elementary and middle school children primarily of immig
+ rant families. Tutoring volunteering is ongoing and will take place Monda
+ y - Thursdays from 3:15 pm - 6:00 pm at Henry Flagler Elementary School. 
+ Community service hours will be granted for those who participate. Please
+  fill out this form to confirm you interest to get started! Volunteer Int
+ erest Form\n\nHosted by: Healing Across Borders\n\nAdditional Information
+  can be found at: https://miami.campuslabs.com/engage/event/11137879
+DTEND:20250509T170000Z
+DTSTAMP:20250317T003020Z
+DTSTART:20250304T170000Z
+GEO:25.772060;-80.280600
+LOCATION:Henry M. Flagler Elementary School
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Healing Across Borders x Amor Y Fuerza Volunteering
+UID:https://miami.campuslabs.com/engage/event/11137879
+URL:https://miami.campuslabs.com/engage/event/11137879
+X-HOSTS:Healing Across Borders
+END:VEVENT
+END:VCALENDAR

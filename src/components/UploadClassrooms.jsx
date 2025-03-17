@@ -161,6 +161,9 @@ function DisplayClassrooms() {
     </div>
   );
 }
+<div className="bg-blue-500 text-white p-4 rounded">
+  I should have a blue background!
+</div>
 
 export default DisplayClassrooms;
 

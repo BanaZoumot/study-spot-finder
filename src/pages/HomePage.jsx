@@ -1,0 +1,94 @@
+// src/pages/HomePage.jsx
+
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // for navigation
+import { collection, getDocs } from "firebase/firestore"; // Firestore imports
+import { db } from "../firebase/firebaseConfig"; // Your firebase config
+import Banner from "../components/Banner";
+import FilterForm from "../components/FilterForm";
+import { motion } from "framer-motion"; // Import motion from Framer Motion
+
+export default function HomePage() {
+  const navigate = useNavigate();
+  const [classrooms, setClassrooms] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch classroom data from Firebase when the page loads
+  useEffect(() => {
+    async function fetchClassrooms() {
+      try {
+        const snapshot = await getDocs(collection(db, "classrooms"));
+        const data = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setClassrooms(data);
+      } catch (error) {
+        console.error("Error fetching classrooms:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchClassrooms();
+  }, []);
+
+  // When the FilterForm is submitted, navigate to the loading page
+  // passing the filters and the fetched classroom data.
+  const handleFilter = (filters) => {
+    console.log("Filters submitted:", filters);
+    navigate("/loading", { state: { filters, classrooms } });
+  };
+
+  if (loading) {
+    return <p className="text-center mt-8">Loading...</p>;
+  }
+
+  return (
+    // Wrap your main container in a <motion.div> to animate route transitions
+    <motion.div
+      className="relative w-screen h-screen"
+      style={{
+        backgroundImage: "url('/umvillage.png')", // Ensure umvillage.png is in public/
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+      // Framer Motion props:
+      initial={{ opacity: 0, x: -50 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 50 }}
+      transition={{ duration: 0.7 }}
+    >
+      {/* 3) BLACK OVERLAY FOR SENSOR DATA (unchanged) */}
+      <div className="absolute top-0 left-0 w-3/8 h-full bg-black/55"></div>
+
+      {/* 1) LOGO in top-left corner, pinned absolutely (unchanged) */}
+      <div className="absolute top-0 left-0 z-10 m-4">
+        <img src="/logo.png" alt="Site Logo" className="h-auto w-40" />
+      </div>
+
+      {/* Black bar with Banner at top */}
+      <div className="absolute top-20 left-3/8 w-5/8 bg-black/65 py-1 flex items-center justify-start">
+        <Banner />
+      </div>
+
+      {/* 4) NEW BLACK OVERLAY (454×579, 55% opacity, starting at 750px left and 150px from top)
+          CONTAINING THE FILTER FORM */}
+      <div
+        className="absolute z-0 flex w-3/9"
+        style={{
+          paddingLeft: "14çpx",
+          paddingRight: "90px",
+          height: "489px",
+          left: "52.5%",
+          top: "170px",
+          backgroundColor: "rgba(0, 0, 0, 0.55)",
+        }}
+      >
+        {/* Added wrapper to let FilterForm’s internal widths (e.g. w-[20vw]) work as expected */}
+        <div className="flex justify-center items-center w-full">
+          <FilterForm classrooms={classrooms} onFilter={handleFilter} />
+        </div>
+      </div>
+    </motion.div>
+  );
+}

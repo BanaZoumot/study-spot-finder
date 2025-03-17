@@ -1,3 +1,5 @@
+// src/components/DisplayClassrooms.jsx
+
 import React, { useState, useEffect } from "react";
 import { db } from "../firebase/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
@@ -6,6 +8,8 @@ function DisplayClassrooms() {
   const [classrooms, setClassrooms] = useState([]);
   const [filteredClassrooms, setFilteredClassrooms] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  // Filter states
   const [searchQuery, setSearchQuery] = useState("");
   const [buildingFilter, setBuildingFilter] = useState("");
   const [minCapacity, setMinCapacity] = useState("");
@@ -26,9 +30,13 @@ function DisplayClassrooms() {
         setFilteredClassrooms(classroomData); // Initialize filtered list
         setLoading(false);
 
-        // Extract unique times and days from data (assuming data structure)
-        const uniqueDays = [...new Set(classroomData.flatMap((room) => room.days || []))];
-        const uniqueTimes = [...new Set(classroomData.flatMap((room) => room.times || []))];
+        // Extract unique times and days (if your data has "days" and "times" arrays)
+        const uniqueDays = [
+          ...new Set(classroomData.flatMap((room) => room.days || [])),
+        ];
+        const uniqueTimes = [
+          ...new Set(classroomData.flatMap((room) => room.times || [])),
+        ];
 
         setDays(uniqueDays);
         setTimes(uniqueTimes);
@@ -41,70 +49,92 @@ function DisplayClassrooms() {
     fetchClassrooms();
   }, []);
 
-  // Function to handle filtering
+  // Filter logic
   useEffect(() => {
     let filtered = classrooms.filter((room) => {
-      const matchesQuery = room.roomName.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesBuilding = buildingFilter ? room.building.toLowerCase() === buildingFilter.toLowerCase() : true;
-      const matchesCapacity = minCapacity ? room.capacity >= parseInt(minCapacity) : true;
+      const matchesQuery = room.roomName
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase());
+      const matchesBuilding = buildingFilter
+        ? room.building.toLowerCase() === buildingFilter.toLowerCase()
+        : true;
+      const matchesCapacity = minCapacity
+        ? room.capacity >= parseInt(minCapacity)
+        : true;
+
+      // If you store schedules in room.schedule
+      // and each schedule entry has "start" and "end" times:
       const matchesTime =
         startTime && duration
-          ? room.schedule.some((entry) => {
+          ? room.schedule?.some((entry) => {
               const roomStart = entry.start;
               const roomEnd = entry.end;
               const selectedEndTime = parseInt(startTime) + parseInt(duration);
-              return parseInt(startTime) >= roomStart && selectedEndTime <= roomEnd;
+              return (
+                parseInt(startTime) >= roomStart && selectedEndTime <= roomEnd
+              );
             })
           : true;
 
-      return matchesQuery && matchesBuilding && matchesCapacity && matchesTime;
+      return (
+        matchesQuery && matchesBuilding && matchesCapacity && matchesTime
+      );
     });
 
     setFilteredClassrooms(filtered);
   }, [searchQuery, buildingFilter, minCapacity, startTime, duration, classrooms]);
 
   if (loading) {
-    return <p>Loading classrooms...</p>;
+    return <p className="text-center mt-8">Loading classrooms...</p>;
   }
 
   return (
-    <div style={{ textAlign: "center", padding: "20px" }}>
-      <h2>Available Classrooms</h2>
+    <div className="max-w-4xl mx-auto p-6">
+      <h2 className="text-2xl font-bold text-center mb-6">
+        Available Classrooms
+      </h2>
 
-      <div style={{ marginBottom: "20px" }}>
+      {/* Filter Section */}
+      <div className="flex flex-wrap justify-center gap-4 mb-8">
+        {/* Search by Room Name */}
         <input
           type="text"
           placeholder="Search by Room Name"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          style={{ marginRight: "10px", padding: "8px" }}
+          className="border border-gray-300 rounded px-3 py-2 focus:outline-none"
         />
 
+        {/* Building Filter */}
         <select
           value={buildingFilter}
           onChange={(e) => setBuildingFilter(e.target.value)}
-          style={{ marginRight: "10px", padding: "8px" }}
+          className="border border-gray-300 rounded px-3 py-2 focus:outline-none"
         >
           <option value="">All Buildings</option>
-          {[...new Set(classrooms.map((room) => room.building))].map((building, index) => (
-            <option key={index} value={building}>
-              {building}
-            </option>
-          ))}
+          {[...new Set(classrooms.map((room) => room.building))].map(
+            (building, index) => (
+              <option key={index} value={building}>
+                {building}
+              </option>
+            )
+          )}
         </select>
 
+        {/* Min Capacity */}
         <input
           type="number"
           placeholder="Min Capacity"
           value={minCapacity}
           onChange={(e) => setMinCapacity(e.target.value)}
-          style={{ marginRight: "10px", padding: "8px" }}
+          className="border border-gray-300 rounded px-3 py-2 focus:outline-none"
         />
 
+        {/* Start Time */}
         <select
           value={startTime}
           onChange={(e) => setStartTime(e.target.value)}
-          style={{ marginRight: "10px", padding: "8px" }}
+          className="border border-gray-300 rounded px-3 py-2 focus:outline-none"
         >
           <option value="">Select Start Time</option>
           {Array.isArray(times) &&
@@ -115,18 +145,20 @@ function DisplayClassrooms() {
             ))}
         </select>
 
+        {/* Duration */}
         <input
           type="number"
           placeholder="Duration (hours)"
           value={duration}
           onChange={(e) => setDuration(e.target.value)}
-          style={{ marginRight: "10px", padding: "8px" }}
+          className="border border-gray-300 rounded px-3 py-2 focus:outline-none"
         />
 
+        {/* Days */}
         <select
           value=""
-          onChange={(e) => setDays(e.target.value)}
-          style={{ marginRight: "10px", padding: "8px" }}
+          onChange={(e) => setDays(e.target.value)} // Not sure how you handle day selection
+          className="border border-gray-300 rounded px-3 py-2 focus:outline-none"
         >
           <option value="">Select Day</option>
           {Array.isArray(days) &&
@@ -138,29 +170,35 @@ function DisplayClassrooms() {
         </select>
       </div>
 
-      <ul style={{ listStyle: "none", padding: 0 }}>
-        {filteredClassrooms.length > 0 ? (
-          filteredClassrooms.map((room) => (
+      {/* Classroom List */}
+      {filteredClassrooms.length > 0 ? (
+        <ul className="space-y-4">
+          {filteredClassrooms.map((room) => (
             <li
               key={room.id}
-              style={{
-                marginBottom: "10px",
-                border: "1px solid #ccc",
-                padding: "10px",
-                borderRadius: "5px",
-              }}
+              className="border border-gray-300 rounded p-4 shadow-sm"
             >
-              <strong>Room:</strong> {room.roomName}, <strong>Building:</strong> {room.building},{" "}
-              <strong>Capacity:</strong> {room.capacity}
+              <p className="font-semibold">
+                <span className="text-gray-700">Room:</span> {room.roomName}
+              </p>
+              <p>
+                <span className="text-gray-700 font-semibold">Building:</span>{" "}
+                {room.building}
+              </p>
+              <p>
+                <span className="text-gray-700 font-semibold">Capacity:</span>{" "}
+                {room.capacity}
+              </p>
             </li>
-          ))
-        ) : (
-          <p>No classrooms found matching criteria.</p>
-        )}
-      </ul>
+          ))}
+        </ul>
+      ) : (
+        <p className="text-center text-gray-600">
+          No classrooms found matching criteria.
+        </p>
+      )}
     </div>
   );
 }
 
 export default DisplayClassrooms;
-
