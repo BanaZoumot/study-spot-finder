@@ -179,35 +179,27 @@ export default function StudySpotsGallery() {
   }
 
   return (
-    <div className="p-4 h-full w-full bg-black">
+    <div className="p-4 h-full w-full bg-black pt-20">
       <h2 className="text-3xl font-bold text-center mb-6 text-white">
         Public Study Spots Gallery
       </h2>
 
-      {/* Detailed weather-based recommendation message */}
       {recommendationMessage && (
-        <p className="text-center mb-4 text-blue-300">
-          {recommendationMessage}
-        </p>
+        <p className="text-center mb-6 text-blue-300">{recommendationMessage}</p>
       )}
 
-      {/* Vertical scroll container for recommended study spots */}
-      <div className="flex flex-col overflow-y-auto space-y-4 max-h-[400px]">
-        {(recommendedSpots.length > 0 ? recommendedSpots : spots).map(
-          (spot) => (
-            <div
-              key={spot.id}
-              className="cursor-pointer"
-              onClick={() => setSelectedSpot(spot)}
-            >
-              <img
-                src={spot.images && spot.images[0]}
-                alt={spot.name}
-                className="w-full h-40 object-cover rounded shadow-sm"
-              />
-            </div>
-          )
-        )}
+        { horozontal scroll }
+        <div className="mt-10 flex flex-row overflow-x-auto space-x-8 max-w-full py-6 scrollbar-hide snap-x flex-nowrap">
+        {(recommendedSpots.length > 0 ? recommendedSpots : spots).map((spot) => (
+          <div key={spot.id} className="cursor-pointer snap-start" onClick={() => setSelectedSpot(spot)}>
+            <img
+              src={spot.images && spot.images[0]}
+              alt={spot.name}
+              className="h-80 object-cover rounded-lg shadow-lg"
+              style={{ minWidth: "400px", maxWidth: "450px" }}
+            />
+          </div>
+        ))}
       </div>
 
       {/* Modal for displaying spot details */}
@@ -296,7 +288,7 @@ export default function StudySpotsGallery() {
                         <strong>Average Busyness:</strong>{" "}
                         {aggregatedData[selectedSpot.id].avgBusyness}
                       </p>
-                      <p>
+                      <p>Public Study Spots Gallery
                         <strong>Most Common Noise:</strong>{" "}
                         {aggregatedData[selectedSpot.id].mostCommonNoise}
                       </p>
