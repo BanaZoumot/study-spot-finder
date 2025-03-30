@@ -188,7 +188,7 @@ export default function StudySpotsGallery() {
         <p className="text-center mb-6 text-blue-300">{recommendationMessage}</p>
       )}
 
-        { horozontal scroll }
+       {/* // { horozontal scroll } */}
         <div className="mt-10 flex flex-row overflow-x-auto space-x-8 max-w-full py-6 scrollbar-hide snap-x flex-nowrap">
         {(recommendedSpots.length > 0 ? recommendedSpots : spots).map((spot) => (
           <div key={spot.id} className="cursor-pointer snap-start" onClick={() => setSelectedSpot(spot)}>
