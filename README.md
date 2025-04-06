@@ -1,6 +1,6 @@
 # Sensor Data Collection, Wi-Fi Sniffing, and Firebase Integration
 
-This project combines motion detection, distance measurement, sound measurement, and Wi-Fi sniffing using an ESP32 microcontroller. It integrates multiple sensors for environmental data collection, sends sensor data to Firebase in real-time, and performs Wi-Fi sniffing to track unique MAC addresses in the surrounding area. The data is stored in Firebase for monitoring, and Wi-Fi sniffing results are printed to the Serial Monitor.
+This project combines motion detection, distance measurement, sound measurement, and Wi-Fi sniffing using an ESP32 microcontroller. It integrates multiple sensors for environmental data collection, sends sensor data to Firebase in real-time, and performs Wi-Fi sniffing to track unique MAC addresses in the surrounding area. The data is stored in Firebase for monitoring, and Wi-Fi sniffing results are printed to the Serial Monitor. The programs for the units are .ino files with their respective unit names (i.e. 'Unit_1c.ino').
 
 ## Features
 
