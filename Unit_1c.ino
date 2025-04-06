@@ -8,8 +8,8 @@
 #include <math.h>  // Math functions for audio signal analysis
 
 // Wi-Fi credentials
-const char* ssid = "Ramos0618";  // Your Wi-Fi SSID
-const char* password = "Awake01!";  // Your Wi-Fi password
+const char* ssid = "";  // Your Wi-Fi SSID
+const char* password = "";  // Your Wi-Fi password
 
 // Firebase settings
 const char* host = "seniordesignsensordata.firebaseio.com";  // Firebase host URL (without https://)
@@ -57,24 +57,27 @@ int dbCount = 0;  // Counter for the number of dB values
 unsigned long startTime = 0;  // Start time for averaging dB values
 
 // Function to calculate RMS (Root Mean Square) for the audio signal
-float calculateRMS(float* signal, int startIndex, int endIndex) {
+float calculateRMS(float* signal, int startIndex, int endIndex) 
+{
   double sum = 0.0;
   int count = 0;
   int startBin = (int)((float)startIndex * SAMPLES / SAMPLING_FREQUENCY);  // Convert frequency range to FFT bins
   int endBin = (int)((float)endIndex * SAMPLES / SAMPLING_FREQUENCY);
 
   // Loop through the signal within the frequency range and calculate RMS
-  for (int i = startBin; i < endBin && i < SAMPLES / 2; i++) {
+  for(int i = startBin; i < endBin && i < SAMPLES / 2; i++) 
+  {
     sum += signal[i] * signal[i];
     count++;
   }
 
-  if (count == 0) return 0.0;  // Prevent division by zero
+  if(count == 0) return 0.0;  // Prevent division by zero
   return sqrt(sum / count);  // Return the RMS value
 }
 
 // Function to calculate Spectral Flatness (used to detect speech)
-float calculateSpectralFlatness(float* signal, int startIndex, int endIndex) {
+float calculateSpectralFlatness(float* signal, int startIndex, int endIndex) 
+{
   double geometricMean = 1.0;
   double arithmeticMean = 0.0;
   int count = 0;
@@ -84,20 +87,23 @@ float calculateSpectralFlatness(float* signal, int startIndex, int endIndex) {
   int endBin = (int)((float)endIndex * SAMPLES / SAMPLING_FREQUENCY);
 
   // Calculate geometric and arithmetic means for the frequency bins
-  for (int i = startBin; i < endBin && i < SAMPLES / 2; i++) {
-    if (signal[i] > 0.0) {
+  for(int i = startBin; i < endBin && i < SAMPLES / 2; i++) 
+  {
+    if(signal[i] > 0.0) 
+    {
       geometricMean *= signal[i];
       arithmeticMean += signal[i];
       count++;
     }
   }
 
-  if (count == 0) return 0.0;  // Prevent division by zero
+  if(count == 0) return 0.0;  // Prevent division by zero
 
   geometricMean = pow(geometricMean, 1.0 / count);  // Geometric mean calculation
   arithmeticMean /= count;  // Arithmetic mean calculation
 
-  if (arithmeticMean < epsilon) {
+  if(arithmeticMean < epsilon) 
+  {
     return 0.0;
   }
 
@@ -105,7 +111,8 @@ float calculateSpectralFlatness(float* signal, int startIndex, int endIndex) {
 }
 
 // I2S setup functions for the microphone
-void i2s_install() {
+void i2s_install() 
+{
   const i2s_config_t i2s_config = {
     .mode = (i2s_mode_t)(I2S_MODE_MASTER | I2S_MODE_RX),  // Set I2S mode to receive data
     .sample_rate = SAMPLING_FREQUENCY,  // Set sample rate to 44.1kHz
@@ -119,12 +126,11 @@ void i2s_install() {
   };
 
   esp_err_t err = i2s_driver_install(I2S_PORT, &i2s_config, 0, NULL);  // Install the I2S driver
-  if (err != ESP_OK) {
-    Serial.println(esp_err_to_name(err));  // If installation fails, print the error
-  }
+  if(err != ESP_OK) { Serial.println(esp_err_to_name(err)); }   // If installation fails, print the error
 }
 
-void i2s_setpin() {
+void i2s_setpin() 
+{
   const i2s_pin_config_t pin_config = {
     .bck_io_num = I2S_SCK,  // Set the clock pin for I2S
     .ws_io_num = I2S_WS,  // Set the word select pin for I2S
@@ -133,12 +139,11 @@ void i2s_setpin() {
   };
 
   esp_err_t err = i2s_set_pin(I2S_PORT, &pin_config);  // Configure the I2S pins
-  if (err != ESP_OK) {
-    Serial.println(esp_err_to_name(err));  // If pin configuration fails, print the error
-  }
+  if(err != ESP_OK) { Serial.println(esp_err_to_name(err)); }   // If pin configuration fails, print the error
 }
 
-void setup() {
+void setup() 
+{
   Serial.begin(115200);  // Start serial communication at 115200 baud rate
 
   // Connect to Wi-Fi
@@ -147,8 +152,9 @@ void setup() {
   // Initialize the VL53L5CX LiDAR sensor
   Wire.begin(21, 22);  // I2C bus initialization
   Wire.setClock(400000);  // Set I2C clock speed to 400kHz
-  if (!sensorRL.begin()) {
-    Serial.println("VL53L5CX failed to initialize");  // Check if sensor initialization fails
+  if(!sensorRL.begin()) 
+  {
+    Serial.println("VL53L5CX failed to initialize.");  // Check if sensor initialization fails
     while (1);  // Halt if sensor fails
   }
 
@@ -163,40 +169,45 @@ void setup() {
   i2s_start(I2S_PORT);
 }
 
-void loop() {
+void loop() 
+{
   // LiDAR portion: Detect motion based on LiDAR distance data
-  if (sensorRL.isDataReady()) {
-    if (sensorRL.getRangingData(&measurementData)) {
+  if(sensorRL.isDataReady()) 
+  {
+    if(sensorRL.getRangingData(&measurementData)) 
+    {
       // Process LiDAR data and check if any values exceed the threshold
-      for (int y = 0; y < imageWidth; ++y) {
-        for (int x = 0; x < imageWidth; ++x) {
+      for(int y = 0; y < imageWidth; ++y) 
+      {
+        for(int x = 0; x < imageWidth; ++x) 
+        {
           cell_array[x][y] = measurementData.distance_mm[y * imageWidth + x];
-          if (cell_array[x][y] > threshold) {
-            allUnderThreshold = false;  // If any distance exceeds threshold, there's motion
+          if (cell_array[x][y] > threshold) 
+          {
+            allUnderThreshold = false;  // If any distance exceeds threshold, there's continuous motion (nothing is blocking the sensor)
           }
         }
       }
 
       // Detect motion direction based on specific cells' values
-      if (!allUnderThreshold) {
+      if(!allUnderThreshold) 
+      {
         int row1 = (imageWidth / 2) - 1;
         int row2 = imageWidth / 2;
 
         if (cell_array[row1][imageWidth - 1] < threshold ||  // Check cells for forward motion
             cell_array[row1][imageWidth - 2] < threshold ||
             cell_array[row2][imageWidth - 1] < threshold ||
-            cell_array[row2][imageWidth - 2] < threshold) {
-          motion = 1;  // Motion detected towards the right (forward)
-        } else if (cell_array[row1][0] < threshold ||  // Check cells for backward motion
+            cell_array[row2][imageWidth - 2] < threshold) { motion = 1; }   // Motion detected towards the right (forward) 
+        else if (cell_array[row1][0] < threshold ||  // Check cells for backward motion
                    cell_array[row1][1] < threshold ||
                    cell_array[row2][0] < threshold ||
-                   cell_array[row2][1] < threshold) {
-          motion = -1;  // Motion detected towards the left (backward)
-        }
+                   cell_array[row2][1] < threshold) { motion = -1; }    // Motion detected towards the left (backward)
       }
 
       // If motion is detected, send the motion data to Firebase
-      if (motion != 0) {
+      if(motion != 0) 
+      {
         sendToFirebaseL(motion);
         motion = 0;  // Reset motion state
         delay(1500);  // Add delay to avoid sending multiple requests in quick succession
@@ -208,9 +219,11 @@ void loop() {
   size_t bytesRead = 0;
   esp_err_t result = i2s_read(I2S_PORT, sBuffer, sizeof(sBuffer), &bytesRead, portMAX_DELAY);
 
-  if (result == ESP_OK && bytesRead > 0) {
+  if(result == ESP_OK && bytesRead > 0) 
+  {
     // Convert the audio samples into the FFT input format
-    for (int i = 0; i < SAMPLES; i++) {
+    for(int i = 0; i < SAMPLES; i++) 
+    {
       vReal[i] = (float)sBuffer[i];
       vImag[i] = 0;
     }
@@ -229,17 +242,18 @@ void loop() {
     float db = 20 * log10(smoothedRms + 1);  // Convert RMS to dB
 
     // If the sound is loud enough and has speech-like characteristics, send the average dB to Firebase
-    if (smoothedRms > RMS_THRESHOLD && spectralFlatness < SPECTRAL_FLATNESS_THRESHOLD) {
+    if(smoothedRms > RMS_THRESHOLD && spectralFlatness < SPECTRAL_FLATNESS_THRESHOLD) 
+    {
       dbSum += db;  // Accumulate dB values
       dbCount++;  // Increment the count of dB values
 
-      if (startTime == 0) {
-        startTime = millis();  // Start the timer for averaging
-      }
+      if (startTime == 0) { startTime = millis(); }   // Start the timer for averaging
 
       // After the specified averaging time (30 seconds), calculate and send the average dB
-      if (millis() - startTime >= AVG_SPAN) {
-        if (dbCount > 0) {
+      if(millis() - startTime >= AVG_SPAN) 
+      {
+        if(dbCount > 0) 
+        {
           float averageDb = dbSum / dbCount;
           sendToFirebaseM(averageDb);  // Send the average dB value to Firebase
         }
@@ -252,32 +266,34 @@ void loop() {
 }
 
 // Function to connect to Wi-Fi
-void connectToWiFi() {
+void connectToWiFi() 
+{
   WiFi.begin(ssid, password);  // Start the Wi-Fi connection
   int attempts = 0;
-  while (WiFi.status() != WL_CONNECTED && attempts < 20) {  // Retry for 20 attempts
+  while (WiFi.status() != WL_CONNECTED && attempts < 20)
+  {
     delay(500);
     Serial.print(".");
     attempts++;
   }
-  if (WiFi.status() == WL_CONNECTED) {
-    Serial.println("\nConnected to Wi-Fi");  // Print a message when connected
-  }
+  if(WiFi.status() == WL_CONNECTED) { Serial.println("\nConnected to Wi-Fi."); }
 }
 
 // Function to send motion data to Firebase
-void sendToFirebaseL(int motionStatus) {
+void sendToFirebaseL(int motionStatus) 
+{
   WiFiClientSecure client;
   client.setInsecure();  // Disable SSL cert validation for simplicity
 
   // Check if client can connect to Firebase
-  if (!client.connect(host, 443)) {
-    Serial.println("Connection to Firebase failed");  // Print an error message if connection fails
+  if(!client.connect(host, 443)) 
+  {
+    Serial.println("Connection to Firebase failed.");  // Print an error message if connection fails
     return;
   }
 
   // Build the Firebase URL and payload for the motion data
-  String url = "/1c/LiDAR/motion_status.json?auth=" + String(firebaseSecret);
+  String url = "/1c/LiDAR.json?auth=" + String(firebaseSecret);
   String payload = String(motionStatus);
 
   // Send data to Firebase
@@ -288,7 +304,7 @@ void sendToFirebaseL(int motionStatus) {
                payload);
 
   /*
-  // Debug: Print the URL and the payload to the Serial Monitor
+  // Debugging Statements
   Serial.print("URL: ");
   Serial.println(url);
   Serial.print("Payload: ");
@@ -296,9 +312,10 @@ void sendToFirebaseL(int motionStatus) {
   
 
   // Optionally read the response
-  while (client.connected()) {
+  while(client.connected()) 
+  {
     String line = client.readStringUntil('\n');
-    if (line == "\r") break;
+    if(line == "\r") break;
   }
   */
   
@@ -308,18 +325,20 @@ void sendToFirebaseL(int motionStatus) {
 }
 
 // Function to send microphone data (average dB) to Firebase
-void sendToFirebaseM(float averageDbStatus) {
+void sendToFirebaseM(float averageDbStatus) 
+{
   WiFiClientSecure client;
   client.setInsecure();  // Disable SSL cert validation for simplicity
 
   // Check if client can connect to Firebase
-  if (!client.connect(host, 443)) {
-    Serial.println("Connection to Firebase failed");  // Print an error message if connection fails
+  if(!client.connect(host, 443)) 
+  {
+    Serial.println("Connection to Firebase failed.");  // Print an error message if connection fails
     return;
   }
 
   // Build the Firebase URL and payload for the average dB data
-  String url = "/1c/Microphone/average_db.json?auth=" + String(firebaseSecret);
+  String url = "/1c/Microphone.json?auth=" + String(firebaseSecret);
   String payload = String(averageDbStatus);
 
   // Send data to Firebase
@@ -330,7 +349,7 @@ void sendToFirebaseM(float averageDbStatus) {
                payload);
 
   /*
-  // Debug: Print the URL and the payload to the Serial Monitor
+  // Debugging Statements
   Serial.print("URL: ");
   Serial.println(url);
   Serial.print("Payload: ");
@@ -338,7 +357,8 @@ void sendToFirebaseM(float averageDbStatus) {
   
 
   // Optionally read the response
-  while (client.connected()) {
+  while(client.connected()) 
+  {
     String line = client.readStringUntil('\n');
     if (line == "\r") break;
   }
