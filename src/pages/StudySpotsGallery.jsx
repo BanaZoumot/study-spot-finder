@@ -6,13 +6,14 @@ import CheckInForm from "../components/CheckInForm"; // adjust path if needed
 
 export default function StudySpotsGallery() {
   const [spots, setSpots] = useState([]);
+  const [recommendedSpots, setRecommendedSpots] = useState([]);
+  const [recommendationMessage, setRecommendationMessage] = useState("");
   const [loading, setLoading] = useState(true);
   const [selectedSpot, setSelectedSpot] = useState(null);
   const [showCheckInForm, setShowCheckInForm] = useState(false);
-
-  // Store aggregated data in state: e.g. { [spotId]: { avgBusyness, avgNoise } }
   const [aggregatedData, setAggregatedData] = useState({});
 
+  // Fetch study spots from Firestore
   useEffect(() => {
     async function fetchSpots() {
       try {
@@ -31,13 +32,60 @@ export default function StudySpotsGallery() {
     fetchSpots();
   }, []);
 
-  /**
-   * Fetch check-in documents for a given spotId,
-   * aggregate them, and store the results in state.
-   */
+  // When spots are fetched, use weather to set recommendations
+  useEffect(() => {
+    if (spots.length > 0) {
+      fetchWeatherAndSetRecommendations();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [spots]);
+
+  // Fetch weather from OpenWeatherMap and set recommended spots/message
+  async function fetchWeatherAndSetRecommendations() {
+    try {
+      // Hard-coded Coral Gables, FL coordinates: 25.7210, -80.2680
+      const lat = 25.7210;
+      const lon = -80.2680;
+      const API_KEY = "e90ed50a03a80f1b22b48082826d4674"; // Replace with your key
+      const BASE_URL = "https://api.openweathermap.org/data/2.5";
+      const url = `${BASE_URL}/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`;
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error("Weather fetch failed");
+      }
+      const weatherData = await response.json();
+
+      // Extract key weather details
+      const temp = weatherData.main.temp; // Temperature in °C
+      const humidity = weatherData.main.humidity; // Humidity percentage
+      const weatherMain = weatherData.weather[0].main.toLowerCase(); // e.g., "rain", "clear"
+      const weatherDescription = weatherData.weather[0].description; // e.g., "light rain"
+
+      let recs = [...spots]; // default: recommend all spots
+      let message = `It is currently ${temp}°C with ${weatherDescription} and a humidity of ${humidity}%. `;
+      
+      // Determine filtering decision explicitly:
+      if (weatherMain.includes("rain")) {
+        recs = spots.filter((s) => s.indoor === true);
+        message += "Based on this weather, we are recommending indoor study spots for your comfort.";
+      } else if (weatherMain.includes("clear") && humidity < 70) {
+        recs = spots.filter((s) => s.indoor === false);
+        message += "Based on this weather, we are recommending outdoor study spots to take advantage of the great conditions.";
+      } else {
+        message += "The current conditions are moderate, so we're showing all available study spots.";
+      }
+
+      setRecommendedSpots(recs);
+      setRecommendationMessage(message);
+    } catch (err) {
+      console.error("Error fetching weather or setting recommendations:", err);
+      setRecommendationMessage("Unable to fetch weather data. Showing all study spots.");
+      setRecommendedSpots(spots);
+    }
+  }
+
   const fetchAndAggregateCheckIns = async (spotId) => {
     try {
-      // 1. Get all check-ins for this spotId
       const q = query(
         collection(db, "checkIns"),
         where("spotId", "==", spotId)
@@ -45,20 +93,16 @@ export default function StudySpotsGallery() {
       const snapshot = await getDocs(q);
       const checkIns = snapshot.docs.map((doc) => doc.data());
 
-      // 2. Convert textual ratings to numeric for busyness (optional)
-      //    Example: Low -> 1, Moderate -> 2, High -> 3
-      //    Or you can just count frequencies of each label
       let totalBusyness = 0;
       let countBusyness = 0;
-
       let noiseCounts = {
         Quiet: 0,
         Moderate: 0,
         Loud: 0,
       };
+      let wifiSpeedCounts = {};
 
       checkIns.forEach((ci) => {
-        // For busyness
         if (ci.busyness) {
           countBusyness++;
           switch (ci.busyness) {
@@ -75,17 +119,16 @@ export default function StudySpotsGallery() {
               break;
           }
         }
-        // For noise
         if (ci.noise && noiseCounts.hasOwnProperty(ci.noise)) {
           noiseCounts[ci.noise]++;
         }
+        if (ci.wifiSpeed) {
+          wifiSpeedCounts[ci.wifiSpeed] = (wifiSpeedCounts[ci.wifiSpeed] || 0) + 1;
+        }
       });
 
-      // 3. Calculate average busyness (as a number)
       const avgBusynessNumber =
         countBusyness > 0 ? totalBusyness / countBusyness : 0;
-
-      // Convert avgBusynessNumber back to a label if desired
       let avgBusynessLabel = "";
       if (avgBusynessNumber > 0) {
         if (avgBusynessNumber < 1.5) avgBusynessLabel = "Low";
@@ -95,19 +138,25 @@ export default function StudySpotsGallery() {
         avgBusynessLabel = "No Data";
       }
 
-      // 4. Find the most common noise level
-      const noiseEntries = Object.entries(noiseCounts); // e.g. [ ["Quiet", 2], ["Moderate", 5], ... ]
-      noiseEntries.sort((a, b) => b[1] - a[1]); // sort descending by count
+      const noiseEntries = Object.entries(noiseCounts);
+      noiseEntries.sort((a, b) => b[1] - a[1]);
       const topNoise = noiseEntries[0];
-      const mostCommonNoise = topNoise && topNoise[1] > 0 ? topNoise[0] : "No Data";
+      const mostCommonNoise =
+        topNoise && topNoise[1] > 0 ? topNoise[0] : "No Data";
 
-      // 5. Update aggregated data in state
+      const wifiSpeedEntries = Object.entries(wifiSpeedCounts);
+      wifiSpeedEntries.sort((a, b) => b[1] - a[1]);
+      const topWifi = wifiSpeedEntries[0];
+      const mostCommonWifiSpeed =
+        topWifi && topWifi[1] > 0 ? topWifi[0] : "No Data";
+
       setAggregatedData((prev) => ({
         ...prev,
         [spotId]: {
           avgBusyness: avgBusynessLabel,
           avgBusynessNumber,
           mostCommonNoise,
+          mostCommonWifiSpeed,
         },
       }));
     } catch (error) {
@@ -115,21 +164,14 @@ export default function StudySpotsGallery() {
     }
   };
 
-  /**
-   * This is called after a user successfully submits a check-in.
-   * We'll refresh the aggregated data for the currently selected spot.
-   */
   const handleCheckInSuccess = (spotId) => {
     fetchAndAggregateCheckIns(spotId);
   };
 
-  // If you want to fetch aggregated data whenever a spot is selected,
-  // you can do it in a useEffect that depends on `selectedSpot`.
   useEffect(() => {
     if (selectedSpot) {
       fetchAndAggregateCheckIns(selectedSpot.id);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedSpot]);
 
   if (loading) {
@@ -137,31 +179,27 @@ export default function StudySpotsGallery() {
   }
 
   return (
-    <div className="relative w-screen h-screen bg-black">
-      <div className="flex h-full">
-        {/* Left half: Horizontal scrollable gallery */}
-        <div className="w-1/2 h-full p-6">
-          <h2 className="text-3xl font-bold text-center mb-6 text-white">
-            Public Study Spots Gallery
-          </h2>
-          <div className="flex overflow-x-auto space-x-4">
-            {spots.map((spot) => (
-              <div
-                key={spot.id}
-                className="flex-shrink-0 w-64 cursor-pointer"
-                onClick={() => setSelectedSpot(spot)}
-              >
-                <img
-                  src={spot.images && spot.images[0]}
-                  alt={spot.name}
-                  className="w-full h-40 object-cover rounded shadow-sm"
-                />
-              </div>
-            ))}
+    <div className="p-4 h-full w-full bg-black pt-20">
+      <h2 className="text-3xl font-bold text-center mb-6 text-white">
+        Public Study Spots Gallery
+      </h2>
+
+      {recommendationMessage && (
+        <p className="text-center mb-6 text-blue-300">{recommendationMessage}</p>
+      )}
+
+        { horozontalscroll}
+        <div className="mt-10 flex flex-row overflow-x-auto space-x-8 max-w-full py-6 scrollbar-hide snap-x flex-nowrap">
+        {(recommendedSpots.length > 0 ? recommendedSpots : spots).map((spot) => (
+          <div key={spot.id} className="cursor-pointer snap-start" onClick={() => setSelectedSpot(spot)}>
+            <img
+              src={spot.images && spot.images[0]}
+              alt={spot.name}
+              className="h-80 object-cover rounded-lg shadow-lg"
+              style={{ minWidth: "400px", maxWidth: "450px" }}
+            />
           </div>
-        </div>
-        {/* Right half: Additional content or placeholder */}
-        <div className="w-1/2 h-full p-6"></div>
+        ))}
       </div>
 
       {/* Modal for displaying spot details */}
@@ -189,7 +227,6 @@ export default function StudySpotsGallery() {
                 &times;
               </button>
               <div className="flex flex-col md:flex-row gap-4">
-                {/* Enlarged image */}
                 <div className="md:w-1/2">
                   <img
                     src={selectedSpot.images && selectedSpot.images[0]}
@@ -197,47 +234,70 @@ export default function StudySpotsGallery() {
                     className="w-full h-auto object-cover rounded"
                   />
                 </div>
-                {/* Text details and check-in button */}
                 <div className="md:w-1/2">
-                  <h3 className="text-xl font-bold mb-2">{selectedSpot.name}</h3>
+                  <h3 className="text-xl font-bold mb-2">
+                    {selectedSpot.name}
+                  </h3>
                   <p className="mb-2">{selectedSpot.description}</p>
                   <p className="mb-1">
-                    <strong>Building:</strong> {selectedSpot.building}
+                    <strong>Building:</strong> {selectedSpot.location.building}
                   </p>
+                  {selectedSpot.location.room && selectedSpot.location.room !== "" && (
+                    <p className="mb-1">
+                      <strong>Room:</strong> {selectedSpot.location.room}
+                    </p>
+                  )}
                   <p className="mb-1">
                     <strong>Indoor:</strong>{" "}
                     {selectedSpot.indoor ? "Yes" : "No"}
                   </p>
-                  <p className="mb-1">
-                    <strong>Outlets:</strong> {selectedSpot.outlets}
-                  </p>
-                  <p className="mb-1">
-                    <strong>Busyness (M/A/E):</strong>{" "}
-                    {selectedSpot.busyMorning} / {selectedSpot.busyAfternoon} /{" "}
-                    {selectedSpot.busyEvening}
-                  </p>
+                  {selectedSpot.operatingHours &&
+                    Object.keys(selectedSpot.operatingHours).length > 0 && (
+                      <p className="mb-1">
+                        <strong>Hours:</strong> {selectedSpot.operatingHours.open} -{" "}
+                        {selectedSpot.operatingHours.close}
+                      </p>
+                    )}
+                  <div className="mb-1">
+                    <strong>Amenities:</strong>
+                    <ul className="list-disc ml-4">
+                      <li>Power Outlets: {selectedSpot.amenities.powerOutlets}</li>
+                      <li>WiFi: {selectedSpot.amenities.wifi ? "Yes" : "No"}</li>
+                      <li>Seating Capacity: {selectedSpot.amenities.seatingCapacity}</li>
+                      <li>Whiteboard: {selectedSpot.amenities.whiteboard ? "Yes" : "No"}</li>
+                      <li>Natural Light: {selectedSpot.amenities.naturalLight ? "Yes" : "No"}</li>
+                      {selectedSpot.amenities.quiet && (
+                        <li>Quiet: {selectedSpot.amenities.quiet}</li>
+                      )}
+                    </ul>
+                  </div>
+                  {selectedSpot.tags && (
+                    <p className="mb-1">
+                      <strong>Tags:</strong> {selectedSpot.tags.join(", ")}
+                    </p>
+                  )}
                   <p className="mb-1">
                     <strong>Dining Options:</strong>{" "}
-                    {selectedSpot.diningOptions
+                    {selectedSpot.diningOptions && selectedSpot.diningOptions.length > 0
                       ? selectedSpot.diningOptions.join(", ")
                       : "N/A"}
                   </p>
-
-                  {/* Display aggregated data if available */}
                   {aggregatedData[selectedSpot.id] && (
                     <div className="mt-4 p-2 border rounded bg-gray-50">
                       <p>
                         <strong>Average Busyness:</strong>{" "}
                         {aggregatedData[selectedSpot.id].avgBusyness}
                       </p>
-                      <p>
+                      <p>Public Study Spots Gallery
                         <strong>Most Common Noise:</strong>{" "}
                         {aggregatedData[selectedSpot.id].mostCommonNoise}
                       </p>
+                      <p>
+                        <strong>Most Common WiFi Speed:</strong>{" "}
+                        {aggregatedData[selectedSpot.id].mostCommonWifiSpeed}
+                      </p>
                     </div>
                   )}
-
-                  {/* Check-In Button */}
                   <button
                     onClick={() => setShowCheckInForm(true)}
                     className="mt-4 bg-orange-500 text-white px-4 py-2 rounded font-bold hover:bg-orange-600 transition-colors"
@@ -251,7 +311,6 @@ export default function StudySpotsGallery() {
         )}
       </AnimatePresence>
 
-      {/* Render the Check-In Form Modal */}
       <AnimatePresence>
         {showCheckInForm && selectedSpot && (
           <CheckInForm

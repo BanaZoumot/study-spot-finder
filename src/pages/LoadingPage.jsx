@@ -132,9 +132,9 @@ export default function LoadingPage() {
       <div
         className="absolute flex items-center justify-end"
         style={{
-          top: "330px",
+          top: "370px",
           left: "0",
-          width: "840px",
+          width: "940px",
           height: "70px",
           backgroundColor: "rgba(0, 0, 0, 0.55)",
           paddingRight: "20px"

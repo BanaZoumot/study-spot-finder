@@ -1,7 +1,7 @@
 // src/components/FilterForm.jsx
 
 import React, { useState, useEffect } from "react";
-
+import BuildingDropdown from "../components/BuildingDropdown";
 // Helper to get the current day name (e.g., "Monday")
 function getCurrentDay() {
   const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -41,28 +41,19 @@ export default function FilterForm({ onFilter, classrooms = [] }) {
       className="w-full h-full flex flex-col items-stretch justify-evenly gap-4"
     >
       {/* Building Dropdown */}
-      <div className="flex flex-col w-full">
-        <label className="text-sm text-white uppercase mb-1 text-left">
-          Which building do you prefer?
-        </label>
-        <select
-          onChange={(e) => handleChange("building", e.target.value)}
-          value={filters.building}
-          className="h-8 justify-evenly rounded-full bg-white text-black text-base px-2 border-none focus:outline-none"
-          style={{ width: "30vw" }}
-        >
-          <option value="">All Buildings</option>
-          {uniqueBuildings.map((building, index) => (
-            <option key={index} value={building}>
-              {building}
-            </option>
-          ))}
-        </select>
-      </div>
+      <label className="text-me text-white uppercase mb-1 text-left">
+        Which building do you prefer?
+      </label>
+      <BuildingDropdown
+      
+  uniqueBuildings={uniqueBuildings}
+  filters={filters}
+  handleChange={handleChange}
+/>
 
       {/* Capacity Input */}
       <div className="flex flex-col w-full">
-        <label className="text-sm text-white uppercase mb-1 text-left">
+        <label className="text-me text-white uppercase mb-1 text-left">
           How many people?
         </label>
         <input

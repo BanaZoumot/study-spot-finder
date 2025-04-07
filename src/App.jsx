@@ -10,13 +10,17 @@ import SpaceHomePage from "./pages/SpaceHomePage";
 import TestFilteringPage from "./pages/TestFilteringPage";
 import StudySpotsGallery from "./pages/StudySpotsGallery";
 import CampusCalendarPage from "./pages/CampusCalendarPage";
+import LoadingStudySpotsPage from "./pages/LoadingStudySpotsPage";
+import StudySpotsPage from "./pages/StudySpotsPage";
+import SensorDataPage from "./pages/SensorDataPage"; // Import the new SensorDataPage component
+import IntroPage from "./pages/IntroPage"; // Import the IntroPage component
 function AnimatedRoutes() {
   const location = useLocation();
 
   return (
     <AnimatePresence exitBeforeEnter>
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<IntroPage />} />
         <Route path="/loading" element={<LoadingPage />} />
         <Route path="/HomePage" element={<HomePage />} />
         <Route path="/classes" element={<ClassesPage />} />
@@ -26,6 +30,11 @@ function AnimatedRoutes() {
         <Route path="/TestFilteringPage" element={<TestFilteringPage />} />
         <Route path="/StudySpotsGallery" element={<StudySpotsGallery />} />
         <Route path="/CampusCalendarPage" element={<CampusCalendarPage />} />
+        <Route path="/loading-study-spots" element={<LoadingStudySpotsPage />} />
+        <Route path="/StudySpotsPage" element={<StudySpotsPage />} />
+        <Route path="/SensorDataPage" element={<SensorDataPage />} /> 
+        <Route path="/IntroPage" element={<IntroPage />} /> {/* Add the IntroPage route */}
+        {/* Add other routes here */}
       </Routes>
     </AnimatePresence>
   );

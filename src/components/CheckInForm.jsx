@@ -47,12 +47,17 @@ const CheckInForm = ({ spotId, onClose, onCheckInSuccess }) => {
         exit={{ scale: 0.8, opacity: 0 }}
         transition={{ duration: 0.3 }}
       >
+
+      <div className="absolute top-2 left-2 w-6 h-6 bg-white z-40 rounded-sm">
         <button
-          className="absolute top-2 right-2 text-gray-600 hover:text-gray-900 text-2xl"
+          className="w-full h-full flex items-center justify-center text-gray-600 hover:text-black text-[10px] font-bold focus:outline-none z-50"
           onClick={onClose}
+          aria-label="Close"
         >
           &times;
         </button>
+      </div>
+
         <h3 className="text-xl font-bold mb-4">Check In</h3>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">

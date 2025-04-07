@@ -1,24 +1,18 @@
 // src/pages/LandingPage.jsx
-
 import React from "react";
-import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 export default function LandingPage() {
   const navigate = useNavigate();
 
   return (
-    <motion.div
+    <div
       className="relative w-screen h-screen"
       style={{
-        backgroundImage: "url('/umvillage.png')", // Replace with your background image
+        backgroundImage: "url('/umvillage.png')", // Same background image; no fade-in animation
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -50 }}
-      transition={{ duration: 0.5 }}
     >
       {/* Black overlay */}
       <div className="absolute inset-0 bg-black/55"></div>
@@ -27,31 +21,41 @@ export default function LandingPage() {
       <div className="relative z-10 flex flex-col items-center justify-center h-full">
         {/* Top text: "ARE [U LOGO] LOOKING FOR A" */}
         <div className="flex items-center gap-2 mb-6">
-          <h1 className="text-white text-3xl font-bold uppercase">ARE</h1>
+          <h1
+            className="text-4xl font-bold uppercase"
+            style={{ color: "white" }}
+          >
+            ARE
+          </h1>
           <img
-            src="/umiamilogo.png" // Replace with your U logo path
+            src="/umiamilogo.png"
             alt="U"
-            className="h-8 w-auto"
+            className="h-11 w-auto"
           />
-          <h1 className="text-white text-3xl font-bold uppercase">LOOKING FOR A</h1>
+          <h1
+            className="text-4xl font-bold uppercase"
+            style={{ color: "white" }}
+          >
+            LOOKING FOR A
+          </h1>
         </div>
 
         {/* Two buttons: ROOM or SPACE */}
         <div className="flex gap-8">
           <button
             className="bg-orange-500 text-white px-6 py-3 rounded font-semibold text-lg hover:bg-orange-600 transition-colors"
-            onClick={() => navigate("/HomePage")} // We'll define "/room-home" below
+            onClick={() => navigate("/HomePage")}
           >
             ROOM
           </button>
           <button
             className="bg-orange-500 text-white px-6 py-3 rounded font-semibold text-lg hover:bg-orange-600 transition-colors"
-            onClick={() => navigate("/SpaceHomePage")} // We'll define "/space-home" below
+            onClick={() => navigate("/SpaceHomePage")}
           >
             SPACE
           </button>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

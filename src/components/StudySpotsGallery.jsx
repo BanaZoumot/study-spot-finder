@@ -62,21 +62,63 @@ export default function StudySpotsGallery() {
       const weatherDescription = weatherData.weather[0].description; // e.g., "light rain"
 
       let recs = [...spots]; // default: recommend all spots
-      let message = `It is currently ${temp}°C with ${weatherDescription} and a humidity of ${humidity}%. `;
       
+      // Define the mapping for weather icons
+      const weatherIcons = {
+        "Clear": "clear.png",
+        "Clouds": "clouds.png",
+        "Rain": "rain.png",
+        "Drizzle": "drizzle.png",
+        "Thunderstorm": "thunderstorm.png"
+      };
+
+      // Define the humidity icon file name
+      const humidityIcon = "humidity.png";
+
+      // Define the icon file path (update as needed)
+      const iconPath = "";
+
+      // Determine the correct weather icon based on the weather description
+      // If there's no match, it falls back to a default icon (default.png)
+      let iconName = weatherIcons[weatherDescription] || "default.png";
+
+      // Build the message with icons included using JSX
+      let messageElements = [
+        <span key="base">
+          <img
+            src={`${iconPath}${iconName}`}
+            alt={`${weatherDescription} icon`}
+            style={{ width: "24px", height: "24px" }}
+          />{" "}
+          It is currently {temp}°C with {weatherDescription} and{" "}
+          <img
+            src={`${iconPath}${humidityIcon}`}
+            alt="Humidity icon"
+            style={{ width: "24px", height: "24px" }}
+          />{" "}
+          {humidity}% humidity.
+        </span>
+      ];
+
       // Determine filtering decision explicitly:
       if (weatherMain.includes("rain")) {
         recs = spots.filter((s) => s.indoor === true);
-        message += "Based on this weather, we are recommending indoor study spots for your comfort.";
+        messageElements.push(
+          " Based on this weather, we are recommending indoor study spots for your comfort."
+        );
       } else if (weatherMain.includes("clear") && humidity < 70) {
         recs = spots.filter((s) => s.indoor === false);
-        message += "Based on this weather, we are recommending outdoor study spots to take advantage of the great conditions.";
+        messageElements.push(
+          " Based on this weather, we are recommending outdoor study spots to take advantage of the great conditions."
+        );
       } else {
-        message += "The current conditions are moderate, so we're showing all available study spots.";
+        messageElements.push(
+          " The current conditions are moderate, so we're showing all available study spots."
+        );
       }
 
       setRecommendedSpots(recs);
-      setRecommendationMessage(message);
+      setRecommendationMessage(<span>{messageElements}</span>);
     } catch (err) {
       console.error("Error fetching weather or setting recommendations:", err);
       setRecommendationMessage("Unable to fetch weather data. Showing all study spots.");
@@ -179,35 +221,34 @@ export default function StudySpotsGallery() {
   }
 
   return (
-    <div className="p-4 h-full w-full bg-black">
+    <div className="p-4 h-full w-full bg-black pt-20">
       <h2 className="text-3xl font-bold text-center mb-6 text-white">
         Public Study Spots Gallery
       </h2>
 
-      {/* Detailed weather-based recommendation message */}
       {recommendationMessage && (
-        <p className="text-center mb-4 text-blue-300">
-          {recommendationMessage}
-        </p>
+        <div className="relative max-w-md mx-auto mt-12 mb-12">
+          {/* Bubble */}
+          <div className="relative bg-gray-200 text-black text-xs px-4 py-3 rounded-[30px] shadow-md">
+            <p className="leading-snug text-center">{recommendationMessage}</p>
+            {/* Upside-down curved tail – bottom-right corner, tucked in */}
+            <div className="absolute -bottom-1 right-1 w-4 h-4 bg-gray-200 rounded-tr-full transform rotate-45"></div>
+          </div>
+        </div>
       )}
 
-      {/* Vertical scroll container for recommended study spots */}
-      <div className="flex flex-col overflow-y-auto space-y-4 max-h-[400px]">
-        {(recommendedSpots.length > 0 ? recommendedSpots : spots).map(
-          (spot) => (
-            <div
-              key={spot.id}
-              className="cursor-pointer"
-              onClick={() => setSelectedSpot(spot)}
-            >
-              <img
-                src={spot.images && spot.images[0]}
-                alt={spot.name}
-                className="w-full h-40 object-cover rounded shadow-sm"
-              />
-            </div>
-          )
-        )}
+      {/* horizontal scroll */}
+      <div className="mt-10 flex flex-row overflow-x-auto space-x-8 max-w-full py-6 scrollbar-hide snap-x flex-nowrap">
+        {(recommendedSpots.length > 0 ? recommendedSpots : spots).map((spot) => (
+          <div key={spot.id} className="cursor-pointer snap-start" onClick={() => setSelectedSpot(spot)}>
+            <img
+              src={spot.images && spot.images[0]}
+              alt={spot.name}
+              className="h-80 object-cover rounded-lg shadow-lg"
+              style={{ minWidth: "400px", maxWidth: "450px" }}
+            />
+          </div>
+        ))}
       </div>
 
       {/* Modal for displaying spot details */}
@@ -228,68 +269,82 @@ export default function StudySpotsGallery() {
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <button
-                className="absolute top-2 right-2 text-gray-600 hover:text-gray-900 text-2xl"
-                onClick={() => setSelectedSpot(null)}
-              >
-                &times;
-              </button>
-              <div className="flex flex-col md:flex-row gap-4">
-                <div className="md:w-1/2">
-                  <img
-                    src={selectedSpot.images && selectedSpot.images[0]}
-                    alt={selectedSpot.name}
-                    className="w-full h-auto object-cover rounded"
-                  />
-                </div>
-                <div className="md:w-1/2">
-                  <h3 className="text-xl font-bold mb-2">
-                    {selectedSpot.name}
-                  </h3>
-                  <p className="mb-2">{selectedSpot.description}</p>
-                  <p className="mb-1">
-                    <strong>Building:</strong> {selectedSpot.location.building}
-                  </p>
-                  {selectedSpot.location.room && selectedSpot.location.room !== "" && (
-                    <p className="mb-1">
-                      <strong>Room:</strong> {selectedSpot.location.room}
-                    </p>
-                  )}
-                  <p className="mb-1">
-                    <strong>Indoor:</strong>{" "}
-                    {selectedSpot.indoor ? "Yes" : "No"}
-                  </p>
-                  {selectedSpot.operatingHours &&
-                    Object.keys(selectedSpot.operatingHours).length > 0 && (
-                      <p className="mb-1">
-                        <strong>Hours:</strong> {selectedSpot.operatingHours.open} -{" "}
-                        {selectedSpot.operatingHours.close}
-                      </p>
-                    )}
-                  <div className="mb-1">
-                    <strong>Amenities:</strong>
-                    <ul className="list-disc ml-4">
-                      <li>Power Outlets: {selectedSpot.amenities.powerOutlets}</li>
-                      <li>WiFi: {selectedSpot.amenities.wifi ? "Yes" : "No"}</li>
-                      <li>Seating Capacity: {selectedSpot.amenities.seatingCapacity}</li>
-                      <li>Whiteboard: {selectedSpot.amenities.whiteboard ? "Yes" : "No"}</li>
-                      <li>Natural Light: {selectedSpot.amenities.naturalLight ? "Yes" : "No"}</li>
-                      {selectedSpot.amenities.quiet && (
-                        <li>Quiet: {selectedSpot.amenities.quiet}</li>
-                      )}
-                    </ul>
+              {/* Close Button: SMALL, floating top-left */}
+              <div className="absolute top-2 left-2 w-6 h-6 bg-white z-40 rounded-sm">
+                <button
+                  className="w-full h-full flex items-center justify-center text-gray-600 hover:text-black text-[10px] font-bold focus:outline-none z-50"
+                  onClick={() => setSelectedSpot(null)}
+                  aria-label="Close"
+                >
+                  &times;
+                </button>
+              </div>
+
+              <div className="flex flex-col gap-4">
+                {/* Top Box: Photo + Name + Description */}
+                <div className="bg-white rounded shadow-md p-4 flex flex-col md:flex-row gap-4">
+                  <div className="md:w-1/2">
+                    <img
+                      src={selectedSpot.images && selectedSpot.images[0]}
+                      alt={selectedSpot.name}
+                      className="w-full h-auto object-cover rounded"
+                    />
                   </div>
+                  <div className="md:w-1/2 flex flex-col justify-center">
+                    <h3 className="text-xl font-bold mb-2">{selectedSpot.name}</h3>
+                    <p>{selectedSpot.description}</p>
+                  </div>
+                </div>
+
+                {/* Bottom Box: Details */}
+                <div className="bg-white rounded shadow-md p-4">
+                  <p className="mb-2 w-full text-base text-gray-800">
+                    <strong>Building:</strong> {selectedSpot.location.building}
+                    {selectedSpot.location.room && ` | `}
+                    {selectedSpot.location.room && (
+                      <>
+                        <strong>Room:</strong> {selectedSpot.location.room}
+                      </>
+                    )}
+                    {" | "}
+                    <strong>Indoor:</strong> {selectedSpot.indoor ? "Yes" : "No"}
+                    {selectedSpot.operatingHours &&
+                      Object.keys(selectedSpot.operatingHours).length > 0 && (
+                        <>
+                          {" | "}
+                          <strong>Hours:</strong> {selectedSpot.operatingHours.open} - {selectedSpot.operatingHours.close}
+                        </>
+                    )}
+                  </p>
+
+                  <div className="mb-2 w-full text-base text-gray-800">
+                    <strong>Amenities:</strong>{" "}
+                    <span>Power Outlets: {selectedSpot.amenities.powerOutlets}</span> |{" "}
+                    <span>WiFi: {selectedSpot.amenities.wifi ? "Yes" : "No"}</span> |{" "}
+                    <span>Seating Capacity: {selectedSpot.amenities.seatingCapacity}</span> |{" "}
+                    <span>Whiteboard: {selectedSpot.amenities.whiteboard ? "Yes" : "No"}</span> |{" "}
+                    <span>Natural Light: {selectedSpot.amenities.naturalLight ? "Yes" : "No"}</span>
+                    {selectedSpot.amenities.quiet && (
+                      <>
+                        {" | "}
+                        <span>Quiet: {selectedSpot.amenities.quiet}</span>
+                      </>
+                    )}
+                  </div>
+
                   {selectedSpot.tags && (
                     <p className="mb-1">
                       <strong>Tags:</strong> {selectedSpot.tags.join(", ")}
                     </p>
                   )}
+
                   <p className="mb-1">
                     <strong>Dining Options:</strong>{" "}
                     {selectedSpot.diningOptions && selectedSpot.diningOptions.length > 0
                       ? selectedSpot.diningOptions.join(", ")
                       : "N/A"}
                   </p>
+
                   {aggregatedData[selectedSpot.id] && (
                     <div className="mt-4 p-2 border rounded bg-gray-50">
                       <p>
@@ -306,6 +361,7 @@ export default function StudySpotsGallery() {
                       </p>
                     </div>
                   )}
+
                   <button
                     onClick={() => setShowCheckInForm(true)}
                     className="mt-4 bg-orange-500 text-white px-4 py-2 rounded font-bold hover:bg-orange-600 transition-colors"

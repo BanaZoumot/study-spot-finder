@@ -5,8 +5,10 @@ import { useNavigate } from "react-router-dom"; // for navigation
 import { collection, getDocs } from "firebase/firestore"; // Firestore imports
 import { db } from "../firebase/firebaseConfig"; // Your firebase config
 import Banner from "../components/Banner";
+import BannerRichter from "../components/bannerRichter";
 import FilterForm from "../components/FilterForm";
 import { motion } from "framer-motion"; // Import motion from Framer Motion
+import SensorDataTest from "../components/SensorTestData"; // Import the sensor data component
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -58,8 +60,17 @@ export default function HomePage() {
       exit={{ opacity: 0, x: 50 }}
       transition={{ duration: 0.7 }}
     >
-      {/* 3) BLACK OVERLAY FOR SENSOR DATA (unchanged) */}
-      <div className="absolute top-0 left-0 w-3/8 h-full bg-black/55"></div>
+      {/* 3) BLACK OVERLAY FOR SENSOR DATA */}
+      <div className="absolute top-0 left-0 w-3/8 h-full bg-black/55 text-white flex flex-col pt-20">
+        {/* Fixed sensor banner with 80% opacity, now starting below the logo */}
+        <div className="bg-black/45 h-14 flex items-center justify-center">
+          <BannerRichter />
+        </div>
+        {/* Scrollable sensor data content below the fixed banner */}
+        <div className="overflow-y-auto flex-1">
+          <SensorDataTest />
+        </div>
+      </div>
 
       {/* 1) LOGO in top-left corner, pinned absolutely (unchanged) */}
       <div className="absolute top-0 left-0 z-10 m-4">
@@ -67,7 +78,7 @@ export default function HomePage() {
       </div>
 
       {/* Black bar with Banner at top */}
-      <div className="absolute top-20 left-3/8 w-5/8 bg-black/65 py-1 flex items-center justify-start">
+      <div className="absolute top-20 left-3/8 w-5/8 bg-black/75 py-1 flex items-center justify-start">
         <Banner />
       </div>
 
@@ -76,7 +87,7 @@ export default function HomePage() {
       <div
         className="absolute z-0 flex w-3/9"
         style={{
-          paddingLeft: "14çpx",
+          paddingLeft: "14px",
           paddingRight: "90px",
           height: "489px",
           left: "52.5%",
