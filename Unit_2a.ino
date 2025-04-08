@@ -383,7 +383,7 @@ void connectToWiFi()
   else 
   {
     Serial.println("\nFailed to connect to Wi-Fi. Retrying...");
-    delay(1000);  // Retry delay before trying again
+    delay(150);  // Retry delay before trying again
     connectToWiFi();
   }
 }
