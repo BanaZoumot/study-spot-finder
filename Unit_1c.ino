@@ -1,6 +1,6 @@
 #include <SparkFun_VL53L5CX_Library.h>  // VL53L5CX LiDAR sensor library
-#include <WiFi.h>  // Wi-Fi library to connect the ESP32 to a network
-#include <WiFiClientSecure.h>  // Secure Wi-Fi client for connecting to Firebase
+#include <WiFi.h>  // Wi-Fi library to connect the ESP32 to a network[]
+#include <WiFiClientSecure.h>  // Secure Wi-Fi client for connecting to Firebase (TLS Protocol over HTTPS)
 #include <Wire.h>  // Wire library for I2C communication
 #include <Arduino.h>  // Base Arduino functionality
 #include <driver/i2s.h>  // I2S driver for audio input
@@ -8,16 +8,15 @@
 #include <math.h>  // Math functions for audio signal analysis
 
 // Wi-Fi credentials
-const char* ssid = "";  // Your Wi-Fi SSID
-const char* password = "";  // Your Wi-Fi password
+const char* ssid = "CanesGuest";  // Your Wi-Fi SSID
 
 // Firebase settings
 const char* host = "seniordesignsensordata.firebaseio.com";  // Firebase host URL (without https://)
 const char* firebaseSecret = "xbD67oeeBbinWyCux8NwhJNBJmQAyZZZjCrjJfrx";  // Firebase secret for authentication
 
 // VL53L5CX sensor settings for LiDAR
-#define imageWidth 4  // Set the image width and height for the LiDAR grid (4x4)
-int16_t threshold = 1500;  // Distance threshold in millimeters for detecting objects
+#define imageWidth 8  // Set the image width and height for the LiDAR grid (4x4)
+int16_t threshold = 800;  // Distance threshold in millimeters for detecting objects
 int16_t cell_array[imageWidth][imageWidth];  // Array to store LiDAR distance data
 
 // INMP441 microphone settings for sound detection
@@ -255,6 +254,7 @@ void loop()
         if(dbCount > 0) 
         {
           float averageDb = dbSum / dbCount;
+          Serial.println(averageDb);
           sendToFirebaseM(averageDb);  // Send the average dB value to Firebase
         }
         dbSum = 0;  // Reset the sum and count
@@ -268,11 +268,11 @@ void loop()
 // Function to connect to Wi-Fi
 void connectToWiFi() 
 {
-  WiFi.begin(ssid, password);  // Start the Wi-Fi connection
+  WiFi.begin(ssid);  // Start the Wi-Fi connection
   int attempts = 0;
   while (WiFi.status() != WL_CONNECTED && attempts < 20)
   {
-    delay(500);
+    delay(150);
     Serial.print(".");
     attempts++;
   }
@@ -285,6 +285,7 @@ void sendToFirebaseL(int motionStatus)
   WiFiClientSecure client;
   client.setInsecure();  // Disable SSL cert validation for simplicity
 
+  Serial.println("Hi2");
   // Check if client can connect to Firebase
   if(!client.connect(host, 443)) 
   {
@@ -303,7 +304,7 @@ void sendToFirebaseL(int motionStatus)
                "Content-Length: " + payload.length() + "\r\n\r\n" +
                payload);
 
-  /*
+  
   // Debugging Statements
   Serial.print("URL: ");
   Serial.println(url);
@@ -317,10 +318,8 @@ void sendToFirebaseL(int motionStatus)
     String line = client.readStringUntil('\n');
     if(line == "\r") break;
   }
-  */
   
   // Close the client connection after sending data
-  delay(500);
   client.stop();
 }
 
@@ -329,7 +328,6 @@ void sendToFirebaseM(float averageDbStatus)
 {
   WiFiClientSecure client;
   client.setInsecure();  // Disable SSL cert validation for simplicity
-
   // Check if client can connect to Firebase
   if(!client.connect(host, 443)) 
   {
@@ -348,7 +346,7 @@ void sendToFirebaseM(float averageDbStatus)
                "Content-Length: " + payload.length() + "\r\n\r\n" +
                payload);
 
-  /*
+  
   // Debugging Statements
   Serial.print("URL: ");
   Serial.println(url);
@@ -362,9 +360,7 @@ void sendToFirebaseM(float averageDbStatus)
     String line = client.readStringUntil('\n');
     if (line == "\r") break;
   }
-  */
-
+  
   // Close the client connection after sending data
-  delay(500);
   client.stop();
 }
