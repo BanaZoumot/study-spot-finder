@@ -284,8 +284,6 @@ void sendToFirebaseL(int motionStatus)
 {
   WiFiClientSecure client;
   client.setInsecure();  // Disable SSL cert validation for simplicity
-
-  Serial.println("Hi2");
   // Check if client can connect to Firebase
   if(!client.connect(host, 443)) 
   {
