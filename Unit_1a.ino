@@ -123,7 +123,7 @@ void connectToWiFi()
   else 
   {
     Serial.println("\nFailed to connect to Wi-Fi. Retrying...");  // Notify if Wi-Fi connection failed
-    delay(1000);  // Wait for 1 second before retrying
+    delay(150);  // Wait for 1 second before retrying
     connectToWiFi();  // Recursively try to connect again if Wi-Fi fails
   }
 }
