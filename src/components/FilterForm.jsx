@@ -65,28 +65,32 @@ export default function FilterForm({ onFilter, classrooms = [] }) {
           style={{ width: "30vw" }}
         />
       </div>
+        
+        {/* Start Time Input */}
+        <div className="flex flex-col w-full">
+          <label className="text-sm text-white uppercase mb-1 text-left">
+            What time do you want to study?
+          </label>
+          <input
+            type="time"
+            placeholder=""
+            value={filters.startTime}
+            onChange={(e) => handleChange("startTime", e.target.value)}
+            className="h-8 box-border rounded-full bg-white text-black text-base px-4 border-none focus:outline-none"
+            style={{ width: "30vw" }}
+          />
+          {/* "Now" Button Container */}
+          <div className="absolute bottom-2 right-2 w-20 h-20 z-40 rounded-sm">
+                <button
+                type="button"
+                onClick={() => handleChange("startTime", getCurrentTime())}
+                className="absolute bottom-35 right-2 bg-orange-500 text-white text-[10px] rounded px-1 py-1 font-medium uppercase hover:bg-orange-200 transition-colors"
+              >
+                Now
+              </button>
+            </div>
+          </div>
 
-      {/* Start Time Input */}
-      <div className="flex flex-col w-full">
-        <label className="text-sm text-white uppercase mb-1 text-left">
-          What time do you want to study?
-        </label>
-        <input
-          type="time"
-          placeholder=""
-          value={filters.startTime}
-          onChange={(e) => handleChange("startTime", e.target.value)}
-          className="h-8 box-border rounded-full bg-white text-black text-base px-4 border-none focus:outline-none"
-          style={{ width: "30vw" }}
-        />
-        <button
-          type="button"
-          onClick={() => handleChange("startTime", getCurrentTime())}
-          className="mt-2 bg-orange-500 text-white text-sm rounded-full px-4 py-2 font-semibold uppercase w-auto self-start hover:bg-orange-600 transition-colors"
-        >
-          Now
-        </button>
-      </div>
 
       {/* Duration Input */}
       <div className="flex flex-col w-full">
@@ -104,12 +108,16 @@ export default function FilterForm({ onFilter, classrooms = [] }) {
       </div>
 
       {/* Submit Button */}
-      <button
-        type="submit"
-        className="bg-orange-500 text-white text-base rounded-full px-2 py-3 font-bold uppercase mt-4 hover:bg-orange-600 transition-colors self-start"
-      >
-        LET’S GO!
-      </button>
+      <div style={{ width: "20vw", marginLeft: "4vw" }}>
+        <button
+          type="submit"
+          className="bg-orange-500 text-white text-base rounded-full px-2 py-1 font-bold uppercase mt-4 hover:bg-orange-600 transition-colors w-full"
+        >
+          LET’S GO!
+        </button>
+      </div>
+
+
     </form>
   );
 }

@@ -14,6 +14,7 @@ export default function ClassesPage() {
   return (
     <div className="relative w-screen h-screen m-0 p-0 overflow-hidden font-sans">
       <motion.div
+      
         className="absolute top-0 left-0 w-full h-full"
         style={{
           backgroundImage: "url('/hammocks.png')",
@@ -35,6 +36,30 @@ export default function ClassesPage() {
           <div className="absolute -bottom-1 left-1 w-4 h-4 bg-orange-500 rounded-tr-full transform rotate-95"></div>
         </div>
       </div>
+
+      
+     {/* Back Button */}
+      <div className="absolute top-2 left-2 w-10 h-10">
+        <button
+          className="w-full h-full flex items-center justify-center focus:outline-none z-50 bg-white rounded-full"
+          onClick={() => navigate(-2)}
+          aria-label="Go Back"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+            viewBox="0 0 20 20"
+            fill="gray"
+          >
+            <path
+              fillRule="evenodd"
+              d="M12.293 15.707a1 1 0 010-1.414L8.414 10l3.879-3.879a1 1 0 10-1.414-1.414l-5 5a1 1 0 000 1.414l5 5a1 1 0 001.414 0z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+
 
         {/* Black banner container starting at 200px from the top */}
         <div
@@ -118,5 +143,6 @@ export default function ClassesPage() {
         </div>
       </motion.div>
     </div>
+    
   );
 }

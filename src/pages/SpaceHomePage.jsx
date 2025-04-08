@@ -66,7 +66,29 @@ export default function HomePage() {
         <StudySpotsGallery />
       </div>
 
-      <div className="absolute top-0 left-0 z-10 m-4">
+           {/* Back Button */}
+           <div className="absolute top-3 left-2 w-10 h-10">
+        <button
+          className="w-full h-full flex items-center justify-center focus:outline-none z-50 bg-white rounded-full"
+          onClick={() => navigate(-1)}
+          aria-label="Go Back"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+            viewBox="0 0 20 20"
+            fill="gray"
+          >
+            <path
+              fillRule="evenodd"
+              d="M12.293 15.707a1 1 0 010-1.414L8.414 10l3.879-3.879a1 1 0 10-1.414-1.414l-5 5a1 1 0 000 1.414l5 5a1 1 0 001.414 0z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div className="absolute top-0 left-6 z-10 m-4">
         <img src="/logo.png" alt="Site Logo" className="h-auto w-40" />
       </div>
 
