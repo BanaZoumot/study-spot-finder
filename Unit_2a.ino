@@ -372,7 +372,7 @@ void connectToWiFi()
   int attempts = 0;
   while(WiFi.status() != WL_CONNECTED && attempts < 20) 
   {  // Retry for 20 attempts
-    delay(200);
+    delay(150);
     Serial.print(".");
     attempts++;
   }
