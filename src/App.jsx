@@ -14,6 +14,7 @@ import LoadingStudySpotsPage from "./pages/LoadingStudySpotsPage";
 import StudySpotsPage from "./pages/StudySpotsPage";
 import SensorDataPage from "./pages/SensorDataPage"; // Import the new SensorDataPage component
 import IntroPage from "./pages/IntroPage"; // Import the IntroPage component
+import DirectionsPage from "./pages/DirectionsPage";
 function AnimatedRoutes() {
   const location = useLocation();
 
@@ -33,8 +34,9 @@ function AnimatedRoutes() {
         <Route path="/loading-study-spots" element={<LoadingStudySpotsPage />} />
         <Route path="/StudySpotsPage" element={<StudySpotsPage />} />
         <Route path="/SensorDataPage" element={<SensorDataPage />} /> 
-        <Route path="/IntroPage" element={<IntroPage />} /> {/* Add the IntroPage route */}
-        {/* Add other routes here */}
+        <Route path="/IntroPage" element={<IntroPage />} /> 
+        <Route path="/DirectionsPage" element={<DirectionsPage />} />
+      
       </Routes>
     </AnimatePresence>
   );

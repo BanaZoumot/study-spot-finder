@@ -56,14 +56,16 @@ export default function StudySpotsGallery() {
       const weatherData = await response.json();
 
       // Extract key weather details
-      const temp = weatherData.main.temp; // Temperature in °C
-      const humidity = weatherData.main.humidity; // Humidity percentage
-      const weatherMain = weatherData.weather[0].main.toLowerCase(); // e.g., "rain", "clear"
-      const weatherDescription = weatherData.weather[0].description; // e.g., "light rain"
+      const temp = weatherData.main.temp;
+      const humidity = weatherData.main.humidity;
+      const weatherMain = weatherData.weather[0].main.toLowerCase();
+      const weatherDescription = weatherData.weather[0].description.toLowerCase();
 
-      let recs = [...spots]; // default: recommend all spots
+      let recs = [...spots];
+      let message = "";
+      let iconName = "";
       
-      // Define the mapping for weather icons
+      // Define weather icons mapping (ensure you have these icons)
       const weatherIcons = {
         "Clear": "clear.png",
         "Clouds": "clouds.png",
@@ -72,53 +74,44 @@ export default function StudySpotsGallery() {
         "Thunderstorm": "thunderstorm.png"
       };
 
-      // Define the humidity icon file name
-      const humidityIcon = "humidity.png";
+      const iconPath = ""; // Update if your icons are in a specific folder
 
-      // Define the icon file path (update as needed)
-      const iconPath = "";
-
-      // Determine the correct weather icon based on the weather description
-      // If there's no match, it falls back to a default icon (default.png)
-      let iconName = weatherIcons[weatherDescription] || "default.png";
-
-      // Build the message with icons included using JSX
-      let messageElements = [
-        <span key="base">
-          <img
-            src={`${iconPath}${iconName}`}
-            alt={`${weatherDescription} icon`}
-            style={{ width: "24px", height: "24px" }}
-          />{" "}
-          It is currently {temp}°C with {weatherDescription} and{" "}
-          <img
-            src={`${iconPath}${humidityIcon}`}
-            alt="Humidity icon"
-            style={{ width: "24px", height: "24px" }}
-          />{" "}
-          {humidity}% humidity.
-        </span>
-      ];
-
-      // Determine filtering decision explicitly:
+      // Decide which message and icon to display:
       if (weatherMain.includes("rain")) {
+        message = "Rainy Day? Cozy up inside for a focused study session!";
         recs = spots.filter((s) => s.indoor === true);
-        messageElements.push(
-          " Based on this weather, we are recommending indoor study spots for your comfort."
-        );
-      } else if (weatherMain.includes("clear") && humidity < 70) {
+        iconName = weatherIcons["Rain"];
+      } else if (weatherMain.includes("clear") || (weatherDescription.includes("scattered clouds") && humidity > 70)) {
+        message = "Sun's out! Why not take your study session outside?";
         recs = spots.filter((s) => s.indoor === false);
-        messageElements.push(
-          " Based on this weather, we are recommending outdoor study spots to take advantage of the great conditions."
-        );
+        iconName = weatherIcons["Clear"];
       } else {
-        messageElements.push(
-          " The current conditions are moderate, so we're showing all available study spots."
-        );
+        message = "Outside or Inside! Pick your study spot right now!";
+        iconName = weatherIcons["Clouds"];
       }
 
+      // Build the message elements with an animated weather icon in one line
+      const messageElements = (
+        <div className="flex items-center justify-center">
+          <motion.img 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            src={`${iconPath}${iconName}`}
+            alt="weather icon"
+            style={{
+              width: "27px",
+              height: "27px",
+              filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.5))",
+              marginRight: "8px"
+            }}
+          />
+          <span>{message}</span>
+        </div>
+      );
+
       setRecommendedSpots(recs);
-      setRecommendationMessage(<span>{messageElements}</span>);
+      setRecommendationMessage(messageElements);
     } catch (err) {
       console.error("Error fetching weather or setting recommendations:", err);
       setRecommendationMessage("Unable to fetch weather data. Showing all study spots.");
@@ -221,31 +214,25 @@ export default function StudySpotsGallery() {
   }
 
   return (
-    <div className="p-4 h-full w-full bg-black pt-20">
-      <h2 className="text-3xl font-bold text-center mb-6 text-white">
-        Public Study Spots Gallery
-      </h2>
+    <div className="p-3 h-full w-full bg-black/30 pt-13">
+      
 
       {recommendationMessage && (
-        <div className="relative max-w-md mx-auto mt-12 mb-12">
-          {/* Bubble */}
-          <div className="relative bg-gray-200 text-black text-xs px-4 py-3 rounded-[30px] shadow-md">
-            <p className="leading-snug text-center">{recommendationMessage}</p>
-            {/* Upside-down curved tail – bottom-right corner, tucked in */}
-            <div className="absolute -bottom-1 right-1 w-4 h-4 bg-gray-200 rounded-tr-full transform rotate-45"></div>
-          </div>
-        </div>
+        <p className="text-center mt-12 mb-12 text-white">{recommendationMessage}</p>
       )}
 
-      {/* horizontal scroll */}
-      <div className="mt-10 flex flex-row overflow-x-auto space-x-8 max-w-full py-6 scrollbar-hide snap-x flex-nowrap">
+      {/* Vertical scroll gallery with a restricted max height */}
+      <div className="mt-1 flex flex-col overflow-y-auto space-y-3 py-6 scrollbar-hide snap-y max-h-[calc(100vh-180px)]">
         {(recommendedSpots.length > 0 ? recommendedSpots : spots).map((spot) => (
-          <div key={spot.id} className="cursor-pointer snap-start" onClick={() => setSelectedSpot(spot)}>
+          <div
+            key={spot.id}
+            className="cursor-pointer snap-start"
+            onClick={() => setSelectedSpot(spot)}
+          >
             <img
               src={spot.images && spot.images[0]}
               alt={spot.name}
-              className="h-80 object-cover rounded-lg shadow-lg"
-              style={{ minWidth: "400px", maxWidth: "450px" }}
+              className="h-80 object-cover rounded-lg shadow-lg w-full"
             />
           </div>
         ))}
@@ -314,7 +301,7 @@ export default function StudySpotsGallery() {
                           {" | "}
                           <strong>Hours:</strong> {selectedSpot.operatingHours.open} - {selectedSpot.operatingHours.close}
                         </>
-                    )}
+                      )}
                   </p>
 
                   <div className="mb-2 w-full text-base text-gray-800">

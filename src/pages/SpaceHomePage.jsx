@@ -85,13 +85,13 @@ export default function HomePage() {
           backgroundColor: "rgba(0, 0, 0, 0.55)",
         }}
       >
-        <div className="flex justify-center items-center w-full">
+       <div className="flex justify-center items-center w-full">
           <StudySpotFilterForm
             studySpots={studySpots}
             uniqueBuildings={uniqueBuildings}
             onFilter={handleFilter}
           />
-        </div>
+       </div>
       </div>
     </motion.div>
   );

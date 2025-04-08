@@ -63,7 +63,7 @@ export default function StudySpotsGallery() {
 
       let recs = [...spots]; // default: recommend all spots
       let message = `It is currently ${temp}°C with ${weatherDescription} and a humidity of ${humidity}%. `;
-      
+
       // Determine filtering decision explicitly:
       if (weatherMain.includes("rain")) {
         recs = spots.filter((s) => s.indoor === true);
@@ -181,22 +181,26 @@ export default function StudySpotsGallery() {
   return (
     <div className="p-4 h-full w-full bg-black pt-20">
       <h2 className="text-3xl font-bold text-center mb-6 text-white">
-        Public Study Spots Gallery
+        Explore
       </h2>
 
       {recommendationMessage && (
-        <p className="text-center mb-6 text-blue-300">{recommendationMessage}</p>
+        // Changed text color to white and removed bubble styling
+        <p className="text-center mb-6 text-white">{recommendationMessage}</p>
       )}
 
-        { horozontalscroll}
-        <div className="mt-10 flex flex-row overflow-x-auto space-x-8 max-w-full py-6 scrollbar-hide snap-x flex-nowrap">
+      {/* Vertical scroll gallery */}
+      <div className="mt-10 flex flex-col overflow-y-auto space-y-8 max-h-screen py-6 scrollbar-hide snap-y">
         {(recommendedSpots.length > 0 ? recommendedSpots : spots).map((spot) => (
-          <div key={spot.id} className="cursor-pointer snap-start" onClick={() => setSelectedSpot(spot)}>
+          <div
+            key={spot.id}
+            className="cursor-pointer snap-start"
+            onClick={() => setSelectedSpot(spot)}
+          >
             <img
               src={spot.images && spot.images[0]}
               alt={spot.name}
-              className="h-80 object-cover rounded-lg shadow-lg"
-              style={{ minWidth: "400px", maxWidth: "450px" }}
+              className="h-80 object-cover rounded-lg shadow-lg w-full"
             />
           </div>
         ))}
@@ -288,7 +292,7 @@ export default function StudySpotsGallery() {
                         <strong>Average Busyness:</strong>{" "}
                         {aggregatedData[selectedSpot.id].avgBusyness}
                       </p>
-                      <p>Public Study Spots Gallery
+                      <p>
                         <strong>Most Common Noise:</strong>{" "}
                         {aggregatedData[selectedSpot.id].mostCommonNoise}
                       </p>
